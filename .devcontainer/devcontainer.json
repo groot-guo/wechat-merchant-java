@@ -1,0 +1,9 @@
+{
+  "name": "wechat-merchant",
+
+  "image": "java:openjdk-8u111",
+
+  "containerUser": "root",
+
+  "remoteUser": "root"
+}
