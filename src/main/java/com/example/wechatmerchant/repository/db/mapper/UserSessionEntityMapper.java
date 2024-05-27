@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface UserSessionEntityMapper {
 
-    @Update("update user_session_tab set session_key=#{userSession.sessionKey}, mtime=#{userSession.mtime}" +
+    @Update("update user_session_tab set session_key=#{userSession.sessionKey}, mtime=#{userSession.mtime} " +
             "where openid=#{userSession.openId}")
     void updateUserSession(UserSessionEntity userSession);
 
