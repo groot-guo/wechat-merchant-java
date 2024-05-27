@@ -71,10 +71,14 @@ spring:
 mybatis:
   mapper-locations: classpath:mappers/*xml
   type-aliases-package: com.example.wechatmerchant.domain.entities
+  configuration:
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # mybatis 日志适配器只会输出到 控制台
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
 
 logging:
   file:
     path: log
   level:
     root: info
+    com.example.wechatmerchant.repository.db.mapper: debug
 
