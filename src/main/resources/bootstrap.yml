@@ -71,3 +71,10 @@ spring:
 mybatis:
   mapper-locations: classpath:mappers/*xml
   type-aliases-package: com.example.wechatmerchant.domain.entities
+
+logging:
+  file:
+    path: log
+  level:
+    root: info
+
