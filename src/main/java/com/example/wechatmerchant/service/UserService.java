@@ -8,6 +8,7 @@ import com.example.wechatmerchant.pojo.vo.WeChatVO;
 import com.example.wechatmerchant.repository.db.entity.UserEntity;
 import com.example.wechatmerchant.repository.db.entity.UserSessionEntity;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -20,9 +21,8 @@ import static com.example.wechatmerchant.pojo.error.UserError.USER_NOT_FOUND_ERR
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserService {
-
-    private static final Logger log = LoggerFactory.getLogger(UserService.class);
 
     private final UserExecutor userExecutor;
 

@@ -1,6 +1,7 @@
 package com.example.wechatmerchant.service;
 
 import com.example.wechatmerchant.WeChatConfig;
+import com.example.wechatmerchant.aspect.Loggable;
 import com.example.wechatmerchant.pojo.error.WeChatError;
 import com.example.wechatmerchant.pojo.exception.WeChatException;
 import com.example.wechatmerchant.pojo.vo.CommonVO;
@@ -81,8 +82,8 @@ public class WeChatService {
         } catch (NoSuchAlgorithmException | InvalidKeyException e) {
             log.error("getSignature, err:{}", e.getMessage());
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     String bytesToHex(byte[] bytes) {
@@ -94,6 +95,7 @@ public class WeChatService {
     }
 
     // WebClient.create("https://api.weixin.qq.com") 调用问题没有解决，不能阻塞，如何等待响应返回，由于外部接口调用过程
+    @Loggable
     public boolean checkSession(WeChatVO.CheckSessionReq accessTokenReq) throws InterruptedException {
         // 1. get access token
         WeChatVO.AccessTokenResp accessTokenRsp  = getAccessToken();
