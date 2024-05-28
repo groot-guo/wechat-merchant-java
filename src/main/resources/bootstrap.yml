@@ -4,6 +4,7 @@ spring:
     name: wechat-merchant-user-service
   cloud:
     nacos:
+      # 本地启动配置中心地址 http://127.0.0.1:8848/nacos/
       # nacos用户名
       # username: nacos
       # nacos用户密码
