@@ -25,7 +25,7 @@ public class UserExecutor {
     private final UserSessionRepository usersessionRepository;
 
     @Transactional
-    public void createUser(UserVO.UserReq userReq) {
+    public void createUser(UserVO.RegisterUserReq userReq) {
 
         Instant now = Instant.now();
         UserEntity userEntity = new UserEntity();
