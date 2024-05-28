@@ -3,6 +3,7 @@ package com.example.wechatmerchant.service;
 import com.example.wechatmerchant.WeChatConfig;
 import com.example.wechatmerchant.pojo.error.WeChatError;
 import com.example.wechatmerchant.pojo.exception.WeChatException;
+import com.example.wechatmerchant.pojo.vo.CommonVO;
 import com.example.wechatmerchant.pojo.vo.WeChatVO;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
+import reactor.core.Disposable;
+import reactor.core.publisher.Mono;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -34,7 +37,6 @@ public class WeChatService {
     // 无需外部调用，因为 access token 是为了请求其他接口时，加入的参数
     // restTemplate 方法调用示例
     WeChatVO.AccessTokenResp getAccessToken() {
-        WeChatVO.AccessTokenResp response;
 
         // build get http url
         String url = "https://api.weixin.qq.com/cgi-bin/token";
@@ -44,7 +46,7 @@ public class WeChatService {
                 .queryParam("grant_type", weChatConfig.getGrantType());
 
         // 请求 wechat 服务
-        response = restTemplate.getForObject(
+        WeChatVO.AccessTokenResp  response = restTemplate.getForObject(
                 builder.toUriString(),
                 WeChatVO.AccessTokenResp.class
         );
@@ -91,31 +93,35 @@ public class WeChatService {
         return sb.toString();
     }
 
-
-    public boolean checkSession(WeChatVO.CheckSessionReq accessTokenReq) {
+    // WebClient.create("https://api.weixin.qq.com") 调用问题没有解决，不能阻塞，如何等待响应返回，由于外部接口调用过程
+    public boolean checkSession(WeChatVO.CheckSessionReq accessTokenReq) throws InterruptedException {
         // 1. get access token
         WeChatVO.AccessTokenResp accessTokenRsp  = getAccessToken();
 
-        WeChatVO.CheckSessionResp response;
         String signature = this.getSignature(accessTokenReq.getSessionKey());
+        // build get http url
+        String url = "https://api.weixin.qq.com/wxa/checksession";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
+                .queryParam("access_token", accessTokenRsp.getAccessToken())
+                .queryParam("openid", accessTokenReq.getOpenId())
+                .queryParam("signature", signature)
+                .queryParam("sig_method", "hmac_sha256"); // 用户登录态签名哈希方法
 
-        response = WebClient.create("https://api.weixin.qq.com").get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/wxa/checksession")
-                        .queryParam("access_token", accessTokenRsp.getAccessToken())
-                        .queryParam("openid", accessTokenReq.getOpenid())
-                        .queryParam("signature", signature)
-                        .queryParam("sig_method", "hmac_sha256") // 用户登录态签名哈希方法
-                        .build()
-                ).retrieve().bodyToMono(WeChatVO.CheckSessionResp.class).block();
+        // 请求 wechat 服务
+        CommonVO.WeChatCommonRsp response = restTemplate.getForObject(
+                builder.toUriString(),
+                CommonVO.WeChatCommonRsp.class
+        );
+
         if (response == null) {
             throw new WeChatException(-1, "response is null");
         }
         if (response.getErrCode() == null) {
             throw new WeChatException(-1, "wechat req errormsg:" + response.getErrMsg());
         }
-        if (response.getErrCode().equals(WeChatError.INVALID_SIGNATURE.getErrCode())) {
-            throw new WeChatException(response.getErrCode(), "wechat req errormsg:" + response.getErrMsg());
+        // 不 ok 一律返回
+        if (!response.getErrCode().equals(WeChatError.OK.getErrCode())) {
+            throw new WeChatException(response.getErrCode(), "wechat req errorms: " + response.getErrMsg());
         }
 
         return true;

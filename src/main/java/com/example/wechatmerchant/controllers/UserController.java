@@ -1,7 +1,6 @@
 package com.example.wechatmerchant.controllers;
 
 import com.example.wechatmerchant.pojo.vo.UserVO;
-import com.example.wechatmerchant.pojo.vo.WeChatVO;
 import com.example.wechatmerchant.repository.db.entity.UserEntity;
 import com.example.wechatmerchant.service.UserService;
 import com.example.wechatmerchant.service.WeChatService;
@@ -15,9 +14,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
-
-    private final WeChatService weChatService;
-
 
     @GetMapping("/{openId}")
     public UserEntity getUser(@PathVariable String openId) {

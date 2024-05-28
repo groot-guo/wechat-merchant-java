@@ -4,6 +4,7 @@ package com.example.wechatmerchant.pojo.vo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -32,22 +33,14 @@ public class UserVO {
         private String msg;
     }
 
+    @EqualsAndHashCode(callSuper = true)
     @Data
-    @AllArgsConstructor
-    public static class UserLoginReq {
-        private String openId;
-        private String sessionKey;
-    }
+    @NoArgsConstructor
+    public static class UserLoginReq extends CommonVO.Session {}
 
+    @EqualsAndHashCode(callSuper = true)
     @Data
-    @AllArgsConstructor
     @NoArgsConstructor // post 请求创建需要 无参构造函数初始化
-    public static class CheckUserSessionReq {
-        @JsonProperty("openid")
-        private String openId;
-
-
-        private String sessionKey;
-    }
+    public static class CheckUserSessionReq extends CommonVO.Session {}
 
 }

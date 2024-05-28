@@ -88,7 +88,10 @@ public class UserService {
             }
 
             // 2. 请求 wechat 验证
-            WeChatVO.CheckSessionReq checkSessionReq = new WeChatVO.CheckSessionReq(checkUserSessionReq.getOpenId(), checkUserSessionReq.getSessionKey());
+            WeChatVO.CheckSessionReq checkSessionReq = new WeChatVO.CheckSessionReq();
+            checkSessionReq.setOpenId(checkUserSessionReq.getOpenId());
+            checkSessionReq.setSessionKey(checkUserSessionReq.getSessionKey());
+
             boolean isExisted = weChatService.checkSession(checkSessionReq);
             // wechat not found ， return false
             if (!isExisted) {
@@ -105,7 +108,7 @@ public class UserService {
 
             // 4. session db 中不存在，说明未创建登录过，所以去走登录。由登录创建 数据
             return false;
-        } catch (WeChatException | UserException e) {
+        } catch (WeChatException | UserException | InterruptedException e) {
             log.error("checkUserSession error", e);
             return false;
         }
