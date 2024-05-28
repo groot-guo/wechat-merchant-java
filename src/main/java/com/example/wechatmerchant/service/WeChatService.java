@@ -7,14 +7,10 @@ import com.example.wechatmerchant.pojo.exception.WeChatException;
 import com.example.wechatmerchant.pojo.vo.CommonVO;
 import com.example.wechatmerchant.pojo.vo.WeChatVO;
 import lombok.AllArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
-import reactor.core.Disposable;
-import reactor.core.publisher.Mono;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -22,11 +18,10 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-
+@Slf4j
 @Service
 @AllArgsConstructor
 public class WeChatService {
-    private static final Logger log = LoggerFactory.getLogger(UserService.class);
 
     private final WeChatConfig weChatConfig;
 
