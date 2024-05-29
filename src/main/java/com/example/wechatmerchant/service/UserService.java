@@ -1,6 +1,7 @@
 package com.example.wechatmerchant.service;
 
 import com.example.wechatmerchant.executor.UserExecutor;
+import com.example.wechatmerchant.wechat.WeChatClient;
 import com.example.wechatmerchant.pojo.exception.UserException;
 import com.example.wechatmerchant.pojo.exception.WeChatException;
 import com.example.wechatmerchant.pojo.vo.UserVO;
@@ -13,20 +14,18 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import static com.example.wechatmerchant.pojo.error.UserError.USER_IS_EXISTED_ERROR;
-import static com.example.wechatmerchant.pojo.error.UserError.USER_NOT_FOUND_ERROR;
+import com.example.wechatmerchant.pojo.error.UserError;
 
-
+@Slf4j
 @Service
 @AllArgsConstructor
-@Slf4j
 public class UserService {
 
     private final UserExecutor userExecutor;
 
     private final RedisTemplate<String, Object> redisTemplate;
 
-    private final WeChatService weChatService;
+    private final WeChatClient weChatService;
 
 
     public UserEntity getUserById(String openId) {
@@ -38,7 +37,7 @@ public class UserService {
         try {
             UserEntity userEntity = userExecutor.getUserByOpenId(userReq.getOpenId());
             if (userEntity != null) {
-                throw new UserException(USER_IS_EXISTED_ERROR);
+                throw new UserException(UserError.USER_IS_EXISTED_ERROR);
             }
             userExecutor.createUser(userReq);
 
@@ -57,7 +56,7 @@ public class UserService {
             // 1. find openid
             UserEntity userEntity = userExecutor.getUserByOpenId(userLoginReq.getOpenId());
             if (userEntity == null) {
-                throw new UserException(USER_NOT_FOUND_ERROR); // not found user
+                throw new UserException(UserError.USER_NOT_FOUND_ERROR); // not found user
             }
 
             // 2. user is existed

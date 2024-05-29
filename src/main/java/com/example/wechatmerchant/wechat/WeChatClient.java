@@ -1,6 +1,5 @@
-package com.example.wechatmerchant.service;
+package com.example.wechatmerchant.wechat;
 
-import com.example.wechatmerchant.WeChatConfig;
 import com.example.wechatmerchant.aspect.Loggable;
 import com.example.wechatmerchant.pojo.error.WeChatError;
 import com.example.wechatmerchant.pojo.exception.WeChatException;
@@ -21,7 +20,7 @@ import java.security.NoSuchAlgorithmException;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class WeChatService {
+public class WeChatClient {
 
     private final WeChatConfig weChatConfig;
 

@@ -3,7 +3,6 @@ package com.example.wechatmerchant.controllers;
 import com.example.wechatmerchant.pojo.vo.UserVO;
 import com.example.wechatmerchant.repository.db.entity.UserEntity;
 import com.example.wechatmerchant.service.UserService;
-import com.example.wechatmerchant.service.WeChatService;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

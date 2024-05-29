@@ -20,9 +20,9 @@ public class WeChatVO {
         private String grantType;
      }
 
-     @EqualsAndHashCode(callSuper = true)
      @Data
      @NoArgsConstructor
+     @EqualsAndHashCode(callSuper = true)
      public static class AccessTokenResp extends CommonVO.WeChatCommonRsp {
         @JsonProperty("access_token")
         private String accessToken;

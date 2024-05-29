@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class LoggingAspect {
 
     // 在执行WeChatService的每个方法前后执行: 所有方法执行打印，此处public 只定义公有方法调用返回，改为 *
-    @Around("execution(* com.example.wechatmerchant.service.WeChatService.*(..))")
+    @Around("execution(* com.example.wechatmerchant.wechat.WeChatClient.*(..))")
     public Object doLogging(ProceedingJoinPoint pjp) throws Throwable {
         System.err.println("[Around] start " + pjp.getSignature());
         Object retVal = pjp.proceed();
