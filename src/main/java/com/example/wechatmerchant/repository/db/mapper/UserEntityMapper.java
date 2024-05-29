@@ -15,9 +15,9 @@ public interface UserEntityMapper {
             "avatar_url=#{user.avatar_url} where openid=#{user.openid} ")
     void updateUser(UserEntity user);
 
-    @Delete("DELETE from users_tab where openid = #{openId}")
+    @Delete("delete from users_tab where openid = #{openId}")
     void deleteUser(String openId);
 
-    @Select("SELECT * FROM users_tab where openid = #{openId}")
+    @Select("select * from users_tab where openid = #{openId}")
     UserEntity getUserById(String openId);
 }
