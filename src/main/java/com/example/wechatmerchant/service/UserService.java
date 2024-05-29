@@ -98,13 +98,8 @@ public class UserService {
 
             // 3. db repo get session key
             UserSessionEntity userSessionEntity =  userExecutor.getUserSession(checkUserSessionReq.getOpenId());
-            // 先判断 存在情况
-            if (userSessionEntity != null && userSessionEntity.getSessionKey().equals(checkUserSessionReq.getSessionKey())) {
-                return true;
-            }
-
-            // 4. session db 中不存在，说明未创建登录过，所以去走登录。由登录创建 数据
-            return false;
+            // 判断 存在情况以及是否匹配
+            return userSessionEntity != null && userSessionEntity.getSessionKey().equals(checkUserSessionReq.getSessionKey());
         } catch (WeChatException | UserException | InterruptedException e) {
             log.error("checkUserSession error", e);
             return false;

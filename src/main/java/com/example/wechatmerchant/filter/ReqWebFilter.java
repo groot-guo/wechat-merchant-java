@@ -26,7 +26,7 @@ public class ReqWebFilter implements WebFilter {
         return chain.filter(exchange)
                 .then(Mono.fromRunnable(() -> {
                     // 记录响应信息
-                    log.info("Completed request: url:{} rsp:{}", request.getURI(), exchange.getResponse());
+                    log.info("Completed request: url: {} rsp: {}", request.getURI(), exchange.getResponse());
                 }));
     }
 }
