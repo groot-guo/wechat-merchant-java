@@ -2,6 +2,7 @@ package com.example.wechatmerchant.repository.db.entity;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /*
 内部实现字段，会与数据库进行匹配，不存在则返回 null，只会优化首字母大写。
@@ -11,8 +12,9 @@ import lombok.Data;
 @ToString：生成一个toString方法，默认情况下，它会打印类名、所有字段的名称和值。
 @EqualsAndHashCode：生成equals和hashCode方法。
  */
+@EqualsAndHashCode(callSuper = false)
 @Data
-public class UserEntity {
+public class UserEntity extends CommonEntity {
 
     private Integer id ;
 
@@ -23,9 +25,5 @@ public class UserEntity {
     private String phone;
 
     private String avatarUrl;
-
-    private Integer ctime;
-
-    private Integer mtime;
 }
 
