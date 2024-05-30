@@ -25,16 +25,17 @@ public class UserExecutor {
     private final UserSessionRepository usersessionRepository;
 
     @Transactional
-    public void createUser(UserVO.RegisterUserReq userReq) {
-
-        Instant now = Instant.now();
+    public void createUser(UserVO.RegisterUserReq userReq) throws UserException {
+        // 判断当前用户是否存在
+        UserEntity isExistUser = userRepository.getUserByOpenId(userReq.getOpenId());
+        if (isExistUser != null) {
+            throw new UserException(UserError.USER_IS_EXISTED_ERROR);
+        }
         UserEntity userEntity = new UserEntity();
         userEntity.setOpenId(userReq.getOpenId());
         userEntity.setNickName(userReq.getNickName());
         userEntity.setPhone(userReq.getPhone());
         userEntity.setAvatarUrl(userReq.getAvatarUrl());
-        userEntity.setCtime(now.getNano());
-        userEntity.setMtime(now.getNano());
 
         userRepository.insertUser(userEntity);
     }
@@ -50,8 +51,6 @@ public class UserExecutor {
         UserSessionEntity userSessionEntity = new UserSessionEntity();
         userSessionEntity.setOpenId(userLoginReq.getOpenId());
         userSessionEntity.setSessionKey(userLoginReq.getSessionKey());
-        userSessionEntity.setCtime(now.getNano());
-        userSessionEntity.setMtime(now.getNano());
 
         usersessionRepository.createUserSession(userSessionEntity);
 

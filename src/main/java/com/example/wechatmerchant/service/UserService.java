@@ -1,5 +1,6 @@
 package com.example.wechatmerchant.service;
 
+import com.example.wechatmerchant.aspect.Loggable;
 import com.example.wechatmerchant.executor.UserExecutor;
 import com.example.wechatmerchant.wechat.WeChatClient;
 import com.example.wechatmerchant.pojo.exception.UserException;
@@ -32,23 +33,22 @@ public class UserService {
         return userExecutor.getUserByOpenId(openId);
     }
 
+    @Loggable
     @Transactional
     public UserVO.UserResp registerUser(UserVO.RegisterUserReq userReq) {
         try {
-            UserEntity userEntity = userExecutor.getUserByOpenId(userReq.getOpenId());
-            if (userEntity != null) {
-                throw new UserException(UserError.USER_IS_EXISTED_ERROR);
-            }
+            // 创建用户
             userExecutor.createUser(userReq);
 
         } catch (UserException e) {
             // 返回错误码
-            log.error("login: {}", e.getMessage());
+            log.error("registerUser: {}", e.getMessage());
             return new UserVO.UserResp(e.getErrorCode(), e.getMessage());
         }
         return null;
     }
 
+    @Loggable
     @Transactional
     public UserVO.UserResp login(UserVO.UserLoginReq userLoginReq) {
         try {
@@ -73,11 +73,9 @@ public class UserService {
         }
     }
 
+    @Loggable
     public boolean checkUserSession(UserVO.CheckUserSessionReq checkUserSessionReq) {
         try {
-            // aop log 全面接入 todo
-            log.info("checkUserSession: {}", checkUserSessionReq);
-
             // 1. redis get session key
             String sessionKey  = (String) redisTemplate.opsForValue().get(checkUserSessionReq.getOpenId());
             if (sessionKey != null && sessionKey.equals(checkUserSessionReq.getSessionKey())) {

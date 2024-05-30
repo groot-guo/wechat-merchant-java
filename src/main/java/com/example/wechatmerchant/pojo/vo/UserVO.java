@@ -14,13 +14,15 @@ public class UserVO {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class RegisterUserReq {
-
+        @JsonProperty("openid")
         private String openId;
 
+        @JsonProperty("nickname")
         private String nickName;
 
         private String phone;
 
+        @JsonProperty("avatar_url")
         private String avatarUrl;
     }
 
