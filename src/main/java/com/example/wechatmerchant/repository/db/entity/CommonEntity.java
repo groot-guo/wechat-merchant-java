@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class CommonEntity {
 
-    private Integer ctime;
+    private Long ctime;
 
-    private Integer mtime;
+    private Long mtime;
 }

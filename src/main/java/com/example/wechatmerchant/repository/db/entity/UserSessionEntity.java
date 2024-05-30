@@ -13,8 +13,4 @@ public class UserSessionEntity extends CommonEntity {
     private String openId;
 
     private String sessionKey ;
-
-    private Integer ctime;
-
-    private Integer mtime;
 }

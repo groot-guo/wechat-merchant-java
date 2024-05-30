@@ -24,7 +24,8 @@ CREATE TABLE `user_session_tab`
     `mtime`       bigint(64) not null default 0,
     unique key (openid, session_key)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
----- 此唯一键存在字符过长问题
+
+---- 此唯一键存在字符过长问题 ----------------------
 ------------------------------------------------
 ----------- user_shipping_address_tab ----------
 ------------------------------------------------
