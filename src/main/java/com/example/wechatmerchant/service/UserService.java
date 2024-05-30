@@ -1,5 +1,13 @@
 package com.example.wechatmerchant.service;
 
+
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.wechatmerchant.pojo.error.UserError;
 import com.example.wechatmerchant.aspect.Loggable;
 import com.example.wechatmerchant.executor.UserExecutor;
 import com.example.wechatmerchant.wechat.WeChatClient;
@@ -9,13 +17,6 @@ import com.example.wechatmerchant.pojo.vo.UserVO;
 import com.example.wechatmerchant.pojo.vo.WeChatVO;
 import com.example.wechatmerchant.repository.db.entity.UserEntity;
 import com.example.wechatmerchant.repository.db.entity.UserSessionEntity;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.example.wechatmerchant.pojo.error.UserError;
 
 @Slf4j
 @Service

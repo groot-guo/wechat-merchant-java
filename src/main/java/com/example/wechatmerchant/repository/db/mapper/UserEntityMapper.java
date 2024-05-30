@@ -1,7 +1,8 @@
 package com.example.wechatmerchant.repository.db.mapper;
 
-import com.example.wechatmerchant.repository.db.entity.UserEntity;
 import org.apache.ibatis.annotations.*;
+
+import com.example.wechatmerchant.repository.db.entity.UserEntity;
 
 // 实际 执行 sql 时，是执行对应字段的 getter 方法，不需要 写 user 这个实体
 @Mapper

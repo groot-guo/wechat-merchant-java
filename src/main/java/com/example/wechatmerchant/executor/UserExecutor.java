@@ -1,5 +1,11 @@
 package com.example.wechatmerchant.executor;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.Instant;
+import java.util.Objects;
 
 import com.example.wechatmerchant.domain.UserRepository;
 import com.example.wechatmerchant.domain.UserSessionRepository;
@@ -8,12 +14,6 @@ import com.example.wechatmerchant.pojo.exception.UserException;
 import com.example.wechatmerchant.pojo.vo.UserVO;
 import com.example.wechatmerchant.repository.db.entity.UserEntity;
 import com.example.wechatmerchant.repository.db.entity.UserSessionEntity;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.Instant;
-import java.util.Objects;
 
 
 @Component

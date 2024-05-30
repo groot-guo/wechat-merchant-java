@@ -1,8 +1,8 @@
 package com.example.wechatmerchant.repository.db.mapper;
 
+import org.apache.ibatis.annotations.*;
 
 import com.example.wechatmerchant.repository.db.entity.UserShippingAddressEntity;
-import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserShippingAddressEntityMapper {

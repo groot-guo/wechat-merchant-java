@@ -1,6 +1,5 @@
 package com.example.wechatmerchant;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -9,6 +8,7 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.web.reactive.config.EnableWebFlux;
+
 
 @Configuration
 @EnableAspectJAutoProxy // 开启 aop

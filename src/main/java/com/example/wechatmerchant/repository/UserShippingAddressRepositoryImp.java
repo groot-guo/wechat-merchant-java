@@ -1,10 +1,12 @@
 package com.example.wechatmerchant.repository;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Repository;
+
 import com.example.wechatmerchant.domain.UserShippingAddressRepository;
 import com.example.wechatmerchant.repository.db.entity.UserShippingAddressEntity;
 import com.example.wechatmerchant.repository.db.mapper.UserShippingAddressEntityMapper;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
+
 
 
 @Repository

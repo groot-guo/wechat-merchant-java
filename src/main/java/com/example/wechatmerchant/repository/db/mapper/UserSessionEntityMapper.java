@@ -1,7 +1,8 @@
 package com.example.wechatmerchant.repository.db.mapper;
 
-import com.example.wechatmerchant.repository.db.entity.UserSessionEntity;
 import org.apache.ibatis.annotations.*;
+
+import com.example.wechatmerchant.repository.db.entity.UserSessionEntity;
 
 @Mapper
 public interface UserSessionEntityMapper {
