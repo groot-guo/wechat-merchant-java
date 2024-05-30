@@ -45,4 +45,19 @@ public class UserVO {
     @NoArgsConstructor // post 请求创建需要 无参构造函数初始化
     public static class CheckUserSessionReq extends CommonVO.Session {}
 
+    @EqualsAndHashCode(callSuper = false)
+    @Data
+    @NoArgsConstructor
+    public static class UserInfoRsp extends CommonVO.CommonRsp {
+        @JsonProperty("openid")
+        private String openId;
+
+        @JsonProperty("nickname")
+        private String nickName;
+
+        private String phone;
+
+        @JsonProperty("avatar_url")
+        private String avatarUrl;
+    }
 }

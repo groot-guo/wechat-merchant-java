@@ -1,6 +1,7 @@
 package com.example.wechatmerchant.service;
 
 
+import com.example.wechatmerchant.pojo.vo.CommonVO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -30,13 +31,32 @@ public class UserService {
     private final WeChatClient weChatService;
 
 
-    public UserEntity getUserById(String openId) {
-        return userExecutor.getUserByOpenId(openId);
+    // 获取 用户信息
+    @Loggable
+    public UserVO.UserInfoRsp getUserById(String openId) {
+        UserVO.UserInfoRsp userInfoRsp = new UserVO.UserInfoRsp();
+
+        try {
+            // 尝试获取
+            UserEntity userEntity =  userExecutor.getUserByOpenId(openId);
+            userInfoRsp.setPhone(userEntity.getPhone());
+            userInfoRsp.setNickName(userEntity.getNickName());
+            userInfoRsp.setAvatarUrl(userEntity.getAvatarUrl());
+            userInfoRsp.setErrorCode(0);
+            userInfoRsp.setErrorMsg("ok");
+
+        } catch (UserException e) {
+            log.error(e.getMessage());
+            userInfoRsp.setErrorCode(e.getErrorCode());
+            userInfoRsp.setErrorMsg(e.getMessage());
+        }
+
+        return userInfoRsp;
     }
 
     @Loggable
     @Transactional
-    public UserVO.UserResp registerUser(UserVO.RegisterUserReq userReq) {
+    public CommonVO.CommonRsp registerUser(UserVO.RegisterUserReq userReq) {
         try {
             // 创建用户
             userExecutor.createUser(userReq);
@@ -44,14 +64,14 @@ public class UserService {
         } catch (UserException e) {
             // 返回错误码
             log.error("registerUser: {}", e.getMessage());
-            return new UserVO.UserResp(e.getErrorCode(), e.getMessage());
+            return new CommonVO.CommonRsp(e.getErrorCode(), e.getMessage());
         }
         return null;
     }
 
     @Loggable
     @Transactional
-    public UserVO.UserResp login(UserVO.UserLoginReq userLoginReq) {
+    public CommonVO.CommonRsp login(UserVO.UserLoginReq userLoginReq) {
         try {
             log.info("login: {}", userLoginReq);
             // 1. find openid
@@ -66,11 +86,11 @@ public class UserService {
             // 3. redis save
             redisTemplate.opsForValue().set(userLoginReq.getOpenId(), userLoginReq.getSessionKey());
 
-            return new UserVO.UserResp(0, "ok");
+            return new CommonVO.CommonRsp(0, "ok");
         } catch (UserException e) {
             // 返回错误码
             log.error("login: {}", e.getMessage());
-            return new UserVO.UserResp(e.getErrorCode(), e.getMessage());
+            return new CommonVO.CommonRsp(e.getErrorCode(), e.getMessage());
         }
     }
 

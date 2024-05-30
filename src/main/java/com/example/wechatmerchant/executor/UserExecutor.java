@@ -70,7 +70,12 @@ public class UserExecutor {
         return userSessionEntity;
     }
 
-    public UserEntity getUserByOpenId(String openId) {
-        return userRepository.getUserByOpenId(openId);
+    public UserEntity getUserByOpenId(String openId) throws UserException {
+        UserEntity userEntity = userRepository.getUserByOpenId(openId);
+        if (userEntity == null || Objects.equals(userEntity.getOpenId(), "")) {
+            throw new UserException(UserError.USER_NOT_FOUND_ERROR);
+        }
+
+        return userEntity;
     }
 }
