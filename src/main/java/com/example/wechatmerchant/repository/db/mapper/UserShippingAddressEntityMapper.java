@@ -7,10 +7,10 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface UserShippingAddressEntityMapper {
 
-    @Insert("insert user_shipping_address_tab (openid, shipping_address) values (#{shippingAddress.openid}, #{shippingAddress.shipping_address})")
+    @Insert("insert user_shipping_address_tab (openid, shipping_address) values (#{openid}, #{hipping_address})")
     void insert(UserShippingAddressEntity shippingAddress);
 
-    @Update("update user_shipping_address_tab set shipping_address = #{shippingAddress.shipping_address} where openid = #{shippingAddress.openid}")
+    @Update("update user_shipping_address_tab set shipping_address = #{shipping_address} where openid = #{openid}")
     void update (UserShippingAddressEntity shippingAddress);
 
     @Select("select * from user_shipping_address_tab where openid = #{openid}")
