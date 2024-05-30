@@ -10,5 +10,5 @@ public interface UserShippingAddressRepository {
 
     void deleteUserShippingAddress(UserShippingAddressEntity shippingAddress);
 
-    UserShippingAddressEntity getUserShippingAddress(String userId);
+    UserShippingAddressEntity getUserShippingAddress(String openid);
 }

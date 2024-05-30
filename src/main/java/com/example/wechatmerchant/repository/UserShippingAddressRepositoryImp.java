@@ -15,21 +15,21 @@ public class UserShippingAddressRepositoryImp implements UserShippingAddressRepo
 
     @Override
     public void createUserShippingAddress(UserShippingAddressEntity shippingAddress) {
-
+        shippingAddressMapper.insert(shippingAddress);
     }
 
     @Override
     public void updateUserShippingAddress(UserShippingAddressEntity shippingAddress) {
-
+        shippingAddressMapper.update(shippingAddress);
     }
 
     @Override
     public void deleteUserShippingAddress(UserShippingAddressEntity shippingAddress) {
-
+        shippingAddressMapper.deleteByOpenid(shippingAddress.getOpenid(), shippingAddress.getShippingAddress());
     }
 
     @Override
-    public UserShippingAddressEntity getUserShippingAddress(String userId) {
-        return null;
+    public UserShippingAddressEntity getUserShippingAddress(String openid) {
+        return shippingAddressMapper.getShippingAddressByOpenid(openid);
     }
 }

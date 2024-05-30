@@ -31,5 +31,4 @@ public class UserRepositoryImp implements UserRepository {
     public UserEntity getUserByOpenId(String openId) {
         return userMapper.getUserById(openId);
     }
-    // 其他方法...
 }
