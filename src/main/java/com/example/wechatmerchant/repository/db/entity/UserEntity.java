@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class UserEntity extends CommonEntity {
 
-    private Integer id ;
+    private Long id ;
 
     private String openId;
 

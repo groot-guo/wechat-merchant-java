@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class UserSessionEntity extends CommonEntity {
 
-    private Integer id ;
+    private Long id ;
 
     private String openId;
 
