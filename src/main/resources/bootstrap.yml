@@ -58,7 +58,7 @@ spring:
         # 作为注册中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
         # server-addr: 127.0.0.1:8848
         # 服务注册在nacso上的命名空间ID，默认值：public
-        namespace: public
+        namespace: c2b3cfff-e8bd-4066-ae52-648a8eb6ceeb
         group: wechat-merchant
 
   datasource:
@@ -89,3 +89,14 @@ logging:
     root: info
     com.example.wechatmerchant.repository.db.mapper: debug
 
+# prometheus
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
