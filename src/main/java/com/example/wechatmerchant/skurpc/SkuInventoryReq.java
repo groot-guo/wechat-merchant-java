@@ -4,26 +4,26 @@
 package com.example.wechatmerchant.skurpc;
 
 /**
- * Protobuf type {@code sku.CommonRsp}
+ * Protobuf type {@code sku.SkuInventoryReq}
  */
-public final class CommonRsp extends
+public final class SkuInventoryReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:sku.CommonRsp)
-    CommonRspOrBuilder {
+    // @@protoc_insertion_point(message_implements:sku.SkuInventoryReq)
+    SkuInventoryReqOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CommonRsp.newBuilder() to construct.
-  private CommonRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SkuInventoryReq.newBuilder() to construct.
+  private SkuInventoryReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CommonRsp() {
-    msg_ = "";
+  private SkuInventoryReq() {
+    skuId_ = "";
   }
 
   @Override
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CommonRsp();
+    return new SkuInventoryReq();
   }
 
   @Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CommonRsp(
+  private SkuInventoryReq(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -49,15 +49,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            code_ = input.readUInt64();
-            break;
-          }
-          case 18: {
+          case 10: {
             String s = input.readStringRequireUtf8();
 
-            msg_ = s;
+            skuId_ = s;
             break;
           }
           default: {
@@ -81,60 +76,49 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Sku.internal_static_sku_CommonRsp_descriptor;
+    return Sku.internal_static_sku_SkuInventoryReq_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Sku.internal_static_sku_CommonRsp_fieldAccessorTable
+    return Sku.internal_static_sku_SkuInventoryReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            CommonRsp.class, Builder.class);
+            SkuInventoryReq.class, Builder.class);
   }
 
-  public static final int CODE_FIELD_NUMBER = 1;
-  private long code_;
+  public static final int SKU_ID_FIELD_NUMBER = 1;
+  private volatile Object skuId_;
   /**
-   * <code>uint64 code = 1;</code>
-   * @return The code.
+   * <code>string sku_id = 1;</code>
+   * @return The skuId.
    */
   @Override
-  public long getCode() {
-    return code_;
-  }
-
-  public static final int MSG_FIELD_NUMBER = 2;
-  private volatile Object msg_;
-  /**
-   * <code>string msg = 2;</code>
-   * @return The msg.
-   */
-  @Override
-  public String getMsg() {
-    Object ref = msg_;
+  public String getSkuId() {
+    Object ref = skuId_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      msg_ = s;
+      skuId_ = s;
       return s;
     }
   }
   /**
-   * <code>string msg = 2;</code>
-   * @return The bytes for msg.
+   * <code>string sku_id = 1;</code>
+   * @return The bytes for skuId.
    */
   @Override
   public com.google.protobuf.ByteString
-      getMsgBytes() {
-    Object ref = msg_;
+      getSkuIdBytes() {
+    Object ref = skuId_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      msg_ = b;
+      skuId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -155,11 +139,8 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (code_ != 0L) {
-      output.writeUInt64(1, code_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, skuId_);
     }
     unknownFields.writeTo(output);
   }
@@ -170,12 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (code_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(1, code_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, skuId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,15 +164,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof CommonRsp)) {
+    if (!(obj instanceof SkuInventoryReq)) {
       return super.equals(obj);
     }
-    CommonRsp other = (CommonRsp) obj;
+    SkuInventoryReq other = (SkuInventoryReq) obj;
 
-    if (getCode()
-        != other.getCode()) return false;
-    if (!getMsg()
-        .equals(other.getMsg())) return false;
+    if (!getSkuId()
+        .equals(other.getSkuId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -207,79 +182,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CODE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCode());
-    hash = (37 * hash) + MSG_FIELD_NUMBER;
-    hash = (53 * hash) + getMsg().hashCode();
+    hash = (37 * hash) + SKU_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSkuId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CommonRsp parseFrom(byte[] data)
+  public static SkuInventoryReq parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CommonRsp parseFrom(java.io.InputStream input)
+  public static SkuInventoryReq parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static CommonRsp parseDelimitedFrom(java.io.InputStream input)
+  public static SkuInventoryReq parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static CommonRsp parseDelimitedFrom(
+  public static SkuInventoryReq parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static CommonRsp parseFrom(
+  public static SkuInventoryReq parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -292,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(CommonRsp prototype) {
+  public static Builder newBuilder(SkuInventoryReq prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -308,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code sku.CommonRsp}
+   * Protobuf type {@code sku.SkuInventoryReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:sku.CommonRsp)
-      CommonRspOrBuilder {
+      // @@protoc_insertion_point(builder_implements:sku.SkuInventoryReq)
+      SkuInventoryReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Sku.internal_static_sku_CommonRsp_descriptor;
+      return Sku.internal_static_sku_SkuInventoryReq_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Sku.internal_static_sku_CommonRsp_fieldAccessorTable
+      return Sku.internal_static_sku_SkuInventoryReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              CommonRsp.class, Builder.class);
+              SkuInventoryReq.class, Builder.class);
     }
 
-    // Construct using com.example.wechatmerchant.skurpc.CommonRsp.newBuilder()
+    // Construct using com.example.wechatmerchant.skurpc.SkuInventoryReq.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -345,9 +317,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      code_ = 0L;
-
-      msg_ = "";
+      skuId_ = "";
 
       return this;
     }
@@ -355,17 +325,17 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Sku.internal_static_sku_CommonRsp_descriptor;
+      return Sku.internal_static_sku_SkuInventoryReq_descriptor;
     }
 
     @Override
-    public CommonRsp getDefaultInstanceForType() {
-      return CommonRsp.getDefaultInstance();
+    public SkuInventoryReq getDefaultInstanceForType() {
+      return SkuInventoryReq.getDefaultInstance();
     }
 
     @Override
-    public CommonRsp build() {
-      CommonRsp result = buildPartial();
+    public SkuInventoryReq build() {
+      SkuInventoryReq result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -373,10 +343,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public CommonRsp buildPartial() {
-      CommonRsp result = new CommonRsp(this);
-      result.code_ = code_;
-      result.msg_ = msg_;
+    public SkuInventoryReq buildPartial() {
+      SkuInventoryReq result = new SkuInventoryReq(this);
+      result.skuId_ = skuId_;
       onBuilt();
       return result;
     }
@@ -415,21 +384,18 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof CommonRsp) {
-        return mergeFrom((CommonRsp)other);
+      if (other instanceof SkuInventoryReq) {
+        return mergeFrom((SkuInventoryReq)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(CommonRsp other) {
-      if (other == CommonRsp.getDefaultInstance()) return this;
-      if (other.getCode() != 0L) {
-        setCode(other.getCode());
-      }
-      if (!other.getMsg().isEmpty()) {
-        msg_ = other.msg_;
+    public Builder mergeFrom(SkuInventoryReq other) {
+      if (other == SkuInventoryReq.getDefaultInstance()) return this;
+      if (!other.getSkuId().isEmpty()) {
+        skuId_ = other.skuId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -447,11 +413,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      CommonRsp parsedMessage = null;
+      SkuInventoryReq parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (CommonRsp) e.getUnfinishedMessage();
+        parsedMessage = (SkuInventoryReq) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -461,109 +427,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long code_ ;
+    private Object skuId_ = "";
     /**
-     * <code>uint64 code = 1;</code>
-     * @return The code.
+     * <code>string sku_id = 1;</code>
+     * @return The skuId.
      */
-    @Override
-    public long getCode() {
-      return code_;
-    }
-    /**
-     * <code>uint64 code = 1;</code>
-     * @param value The code to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCode(long value) {
-      
-      code_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint64 code = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCode() {
-      
-      code_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private Object msg_ = "";
-    /**
-     * <code>string msg = 2;</code>
-     * @return The msg.
-     */
-    public String getMsg() {
-      Object ref = msg_;
+    public String getSkuId() {
+      Object ref = skuId_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        msg_ = s;
+        skuId_ = s;
         return s;
       } else {
         return (String) ref;
       }
     }
     /**
-     * <code>string msg = 2;</code>
-     * @return The bytes for msg.
+     * <code>string sku_id = 1;</code>
+     * @return The bytes for skuId.
      */
     public com.google.protobuf.ByteString
-        getMsgBytes() {
-      Object ref = msg_;
+        getSkuIdBytes() {
+      Object ref = skuId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        msg_ = b;
+        skuId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string msg = 2;</code>
-     * @param value The msg to set.
+     * <code>string sku_id = 1;</code>
+     * @param value The skuId to set.
      * @return This builder for chaining.
      */
-    public Builder setMsg(
+    public Builder setSkuId(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      msg_ = value;
+      skuId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string msg = 2;</code>
+     * <code>string sku_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMsg() {
+    public Builder clearSkuId() {
       
-      msg_ = getDefaultInstance().getMsg();
+      skuId_ = getDefaultInstance().getSkuId();
       onChanged();
       return this;
     }
     /**
-     * <code>string msg = 2;</code>
-     * @param value The bytes for msg to set.
+     * <code>string sku_id = 1;</code>
+     * @param value The bytes for skuId to set.
      * @return This builder for chaining.
      */
-    public Builder setMsgBytes(
+    public Builder setSkuIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      msg_ = value;
+      skuId_ = value;
       onChanged();
       return this;
     }
@@ -580,41 +515,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:sku.CommonRsp)
+    // @@protoc_insertion_point(builder_scope:sku.SkuInventoryReq)
   }
 
-  // @@protoc_insertion_point(class_scope:sku.CommonRsp)
-  private static final CommonRsp DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:sku.SkuInventoryReq)
+  private static final SkuInventoryReq DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new CommonRsp();
+    DEFAULT_INSTANCE = new SkuInventoryReq();
   }
 
-  public static CommonRsp getDefaultInstance() {
+  public static SkuInventoryReq getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CommonRsp>
-      PARSER = new com.google.protobuf.AbstractParser<CommonRsp>() {
+  private static final com.google.protobuf.Parser<SkuInventoryReq>
+      PARSER = new com.google.protobuf.AbstractParser<SkuInventoryReq>() {
     @Override
-    public CommonRsp parsePartialFrom(
+    public SkuInventoryReq parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CommonRsp(input, extensionRegistry);
+      return new SkuInventoryReq(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CommonRsp> parser() {
+  public static com.google.protobuf.Parser<SkuInventoryReq> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<CommonRsp> getParserForType() {
+  public com.google.protobuf.Parser<SkuInventoryReq> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public CommonRsp getDefaultInstanceForType() {
+  public SkuInventoryReq getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

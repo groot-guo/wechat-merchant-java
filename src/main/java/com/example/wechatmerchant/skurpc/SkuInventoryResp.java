@@ -4,18 +4,18 @@
 package com.example.wechatmerchant.skurpc;
 
 /**
- * Protobuf type {@code sku.SkuResp}
+ * Protobuf type {@code sku.SkuInventoryResp}
  */
-public final class SkuResp extends
+public final class SkuInventoryResp extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:sku.SkuResp)
-    SkuRespOrBuilder {
+    // @@protoc_insertion_point(message_implements:sku.SkuInventoryResp)
+    SkuInventoryRespOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SkuResp.newBuilder() to construct.
-  private SkuResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SkuInventoryResp.newBuilder() to construct.
+  private SkuInventoryResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SkuResp() {
+  private SkuInventoryResp() {
     data_ = java.util.Collections.emptyList();
   }
 
@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SkuResp();
+    return new SkuInventoryResp();
   }
 
   @Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SkuResp(
+  private SkuInventoryResp(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,16 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              data_ = new java.util.ArrayList<SkuInfo>();
+              data_ = new java.util.ArrayList<SkuInventoryInfo>();
               mutable_bitField0_ |= 0x00000001;
             }
             data_.add(
-                input.readMessage(SkuInfo.parser(), extensionRegistry));
-            break;
-          }
-          case 24: {
-
-            total_ = input.readUInt64();
+                input.readMessage(SkuInventoryInfo.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -101,15 +96,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Sku.internal_static_sku_SkuResp_descriptor;
+    return Sku.internal_static_sku_SkuInventoryResp_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Sku.internal_static_sku_SkuResp_fieldAccessorTable
+    return Sku.internal_static_sku_SkuInventoryResp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            SkuResp.class, Builder.class);
+            SkuInventoryResp.class, Builder.class);
   }
 
   public static final int COMMON_FIELD_NUMBER = 1;
@@ -139,54 +134,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-  private java.util.List<SkuInfo> data_;
+  private java.util.List<SkuInventoryInfo> data_;
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
   @Override
-  public java.util.List<SkuInfo> getDataList() {
+  public java.util.List<SkuInventoryInfo> getDataList() {
     return data_;
   }
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
   @Override
-  public java.util.List<? extends SkuInfoOrBuilder>
+  public java.util.List<? extends SkuInventoryInfoOrBuilder>
       getDataOrBuilderList() {
     return data_;
   }
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
   @Override
   public int getDataCount() {
     return data_.size();
   }
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
   @Override
-  public SkuInfo getData(int index) {
+  public SkuInventoryInfo getData(int index) {
     return data_.get(index);
   }
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
   @Override
-  public SkuInfoOrBuilder getDataOrBuilder(
+  public SkuInventoryInfoOrBuilder getDataOrBuilder(
       int index) {
     return data_.get(index);
-  }
-
-  public static final int TOTAL_FIELD_NUMBER = 3;
-  private long total_;
-  /**
-   * <code>uint64 total = 3;</code>
-   * @return The total.
-   */
-  @Override
-  public long getTotal() {
-    return total_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -209,9 +193,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < data_.size(); i++) {
       output.writeMessage(2, data_.get(i));
     }
-    if (total_ != 0L) {
-      output.writeUInt64(3, total_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -229,10 +210,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, data_.get(i));
     }
-    if (total_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(3, total_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -243,10 +220,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof SkuResp)) {
+    if (!(obj instanceof SkuInventoryResp)) {
       return super.equals(obj);
     }
-    SkuResp other = (SkuResp) obj;
+    SkuInventoryResp other = (SkuInventoryResp) obj;
 
     if (hasCommon() != other.hasCommon()) return false;
     if (hasCommon()) {
@@ -255,8 +232,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDataList()
         .equals(other.getDataList())) return false;
-    if (getTotal()
-        != other.getTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -276,77 +251,74 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getDataList().hashCode();
     }
-    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTotal());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SkuResp parseFrom(byte[] data)
+  public static SkuInventoryResp parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SkuResp parseFrom(java.io.InputStream input)
+  public static SkuInventoryResp parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SkuResp parseDelimitedFrom(java.io.InputStream input)
+  public static SkuInventoryResp parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static SkuResp parseDelimitedFrom(
+  public static SkuInventoryResp parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SkuResp parseFrom(
+  public static SkuInventoryResp parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -359,7 +331,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(SkuResp prototype) {
+  public static Builder newBuilder(SkuInventoryResp prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -375,26 +347,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code sku.SkuResp}
+   * Protobuf type {@code sku.SkuInventoryResp}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:sku.SkuResp)
-      SkuRespOrBuilder {
+      // @@protoc_insertion_point(builder_implements:sku.SkuInventoryResp)
+      SkuInventoryRespOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Sku.internal_static_sku_SkuResp_descriptor;
+      return Sku.internal_static_sku_SkuInventoryResp_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Sku.internal_static_sku_SkuResp_fieldAccessorTable
+      return Sku.internal_static_sku_SkuInventoryResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SkuResp.class, Builder.class);
+              SkuInventoryResp.class, Builder.class);
     }
 
-    // Construct using com.example.wechatmerchant.skurpc.SkuResp.newBuilder()
+    // Construct using com.example.wechatmerchant.skurpc.SkuInventoryResp.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -425,25 +397,23 @@ private static final long serialVersionUID = 0L;
       } else {
         dataBuilder_.clear();
       }
-      total_ = 0L;
-
       return this;
     }
 
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Sku.internal_static_sku_SkuResp_descriptor;
+      return Sku.internal_static_sku_SkuInventoryResp_descriptor;
     }
 
     @Override
-    public SkuResp getDefaultInstanceForType() {
-      return SkuResp.getDefaultInstance();
+    public SkuInventoryResp getDefaultInstanceForType() {
+      return SkuInventoryResp.getDefaultInstance();
     }
 
     @Override
-    public SkuResp build() {
-      SkuResp result = buildPartial();
+    public SkuInventoryResp build() {
+      SkuInventoryResp result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -451,8 +421,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public SkuResp buildPartial() {
-      SkuResp result = new SkuResp(this);
+    public SkuInventoryResp buildPartial() {
+      SkuInventoryResp result = new SkuInventoryResp(this);
       int from_bitField0_ = bitField0_;
       if (commonBuilder_ == null) {
         result.common_ = common_;
@@ -468,7 +438,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.data_ = dataBuilder_.build();
       }
-      result.total_ = total_;
       onBuilt();
       return result;
     }
@@ -507,16 +476,16 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof SkuResp) {
-        return mergeFrom((SkuResp)other);
+      if (other instanceof SkuInventoryResp) {
+        return mergeFrom((SkuInventoryResp)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(SkuResp other) {
-      if (other == SkuResp.getDefaultInstance()) return this;
+    public Builder mergeFrom(SkuInventoryResp other) {
+      if (other == SkuInventoryResp.getDefaultInstance()) return this;
       if (other.hasCommon()) {
         mergeCommon(other.getCommon());
       }
@@ -546,9 +515,6 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.getTotal() != 0L) {
-        setTotal(other.getTotal());
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -564,11 +530,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      SkuResp parsedMessage = null;
+      SkuInventoryResp parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (SkuResp) e.getUnfinishedMessage();
+        parsedMessage = (SkuInventoryResp) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -698,22 +664,22 @@ private static final long serialVersionUID = 0L;
       return commonBuilder_;
     }
 
-    private java.util.List<SkuInfo> data_ =
+    private java.util.List<SkuInventoryInfo> data_ =
       java.util.Collections.emptyList();
     private void ensureDataIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        data_ = new java.util.ArrayList<SkuInfo>(data_);
+        data_ = new java.util.ArrayList<SkuInventoryInfo>(data_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        SkuInfo, SkuInfo.Builder, SkuInfoOrBuilder> dataBuilder_;
+        SkuInventoryInfo, SkuInventoryInfo.Builder, SkuInventoryInfoOrBuilder> dataBuilder_;
 
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public java.util.List<SkuInfo> getDataList() {
+    public java.util.List<SkuInventoryInfo> getDataList() {
       if (dataBuilder_ == null) {
         return java.util.Collections.unmodifiableList(data_);
       } else {
@@ -721,7 +687,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public int getDataCount() {
       if (dataBuilder_ == null) {
@@ -731,9 +697,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public SkuInfo getData(int index) {
+    public SkuInventoryInfo getData(int index) {
       if (dataBuilder_ == null) {
         return data_.get(index);
       } else {
@@ -741,10 +707,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder setData(
-        int index, SkuInfo value) {
+        int index, SkuInventoryInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -758,10 +724,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder setData(
-        int index, SkuInfo.Builder builderForValue) {
+        int index, SkuInventoryInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.set(index, builderForValue.build());
@@ -772,9 +738,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public Builder addData(SkuInfo value) {
+    public Builder addData(SkuInventoryInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -788,10 +754,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder addData(
-        int index, SkuInfo value) {
+        int index, SkuInventoryInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -805,10 +771,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder addData(
-        SkuInfo.Builder builderForValue) {
+        SkuInventoryInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.add(builderForValue.build());
@@ -819,10 +785,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder addData(
-        int index, SkuInfo.Builder builderForValue) {
+        int index, SkuInventoryInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.add(index, builderForValue.build());
@@ -833,10 +799,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder addAllData(
-        Iterable<? extends SkuInfo> values) {
+        Iterable<? extends SkuInventoryInfo> values) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -848,7 +814,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder clearData() {
       if (dataBuilder_ == null) {
@@ -861,7 +827,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
     public Builder removeData(int index) {
       if (dataBuilder_ == null) {
@@ -874,16 +840,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public SkuInfo.Builder getDataBuilder(
+    public SkuInventoryInfo.Builder getDataBuilder(
         int index) {
       return getDataFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public SkuInfoOrBuilder getDataOrBuilder(
+    public SkuInventoryInfoOrBuilder getDataOrBuilder(
         int index) {
       if (dataBuilder_ == null) {
         return data_.get(index);  } else {
@@ -891,9 +857,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public java.util.List<? extends SkuInfoOrBuilder>
+    public java.util.List<? extends SkuInventoryInfoOrBuilder>
          getDataOrBuilderList() {
       if (dataBuilder_ != null) {
         return dataBuilder_.getMessageOrBuilderList();
@@ -902,33 +868,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public SkuInfo.Builder addDataBuilder() {
+    public SkuInventoryInfo.Builder addDataBuilder() {
       return getDataFieldBuilder().addBuilder(
-          SkuInfo.getDefaultInstance());
+          SkuInventoryInfo.getDefaultInstance());
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public SkuInfo.Builder addDataBuilder(
+    public SkuInventoryInfo.Builder addDataBuilder(
         int index) {
       return getDataFieldBuilder().addBuilder(
-          index, SkuInfo.getDefaultInstance());
+          index, SkuInventoryInfo.getDefaultInstance());
     }
     /**
-     * <code>repeated .sku.SkuInfo data = 2;</code>
+     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
      */
-    public java.util.List<SkuInfo.Builder>
+    public java.util.List<SkuInventoryInfo.Builder>
          getDataBuilderList() {
       return getDataFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        SkuInfo, SkuInfo.Builder, SkuInfoOrBuilder>
+        SkuInventoryInfo, SkuInventoryInfo.Builder, SkuInventoryInfoOrBuilder>
         getDataFieldBuilder() {
       if (dataBuilder_ == null) {
         dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            SkuInfo, SkuInfo.Builder, SkuInfoOrBuilder>(
+            SkuInventoryInfo, SkuInventoryInfo.Builder, SkuInventoryInfoOrBuilder>(
                 data_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -936,37 +902,6 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
-    }
-
-    private long total_ ;
-    /**
-     * <code>uint64 total = 3;</code>
-     * @return The total.
-     */
-    @Override
-    public long getTotal() {
-      return total_;
-    }
-    /**
-     * <code>uint64 total = 3;</code>
-     * @param value The total to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTotal(long value) {
-      
-      total_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint64 total = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTotal() {
-      
-      total_ = 0L;
-      onChanged();
-      return this;
     }
     @Override
     public final Builder setUnknownFields(
@@ -981,41 +916,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:sku.SkuResp)
+    // @@protoc_insertion_point(builder_scope:sku.SkuInventoryResp)
   }
 
-  // @@protoc_insertion_point(class_scope:sku.SkuResp)
-  private static final SkuResp DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:sku.SkuInventoryResp)
+  private static final SkuInventoryResp DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new SkuResp();
+    DEFAULT_INSTANCE = new SkuInventoryResp();
   }
 
-  public static SkuResp getDefaultInstance() {
+  public static SkuInventoryResp getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SkuResp>
-      PARSER = new com.google.protobuf.AbstractParser<SkuResp>() {
+  private static final com.google.protobuf.Parser<SkuInventoryResp>
+      PARSER = new com.google.protobuf.AbstractParser<SkuInventoryResp>() {
     @Override
-    public SkuResp parsePartialFrom(
+    public SkuInventoryResp parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SkuResp(input, extensionRegistry);
+      return new SkuInventoryResp(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SkuResp> parser() {
+  public static com.google.protobuf.Parser<SkuInventoryResp> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<SkuResp> getParserForType() {
+  public com.google.protobuf.Parser<SkuInventoryResp> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public SkuResp getDefaultInstanceForType() {
+  public SkuInventoryResp getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -3,8 +3,8 @@
 
 package com.example.wechatmerchant.skurpc;
 
-public interface SkuRespOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:sku.SkuResp)
+public interface SkuInventoryRespOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:sku.SkuInventoryResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,32 +23,26 @@ public interface SkuRespOrBuilder extends
   CommonRspOrBuilder getCommonOrBuilder();
 
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  java.util.List<SkuInfo>
+  java.util.List<SkuInventoryInfo>
       getDataList();
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  SkuInfo getData(int index);
+  SkuInventoryInfo getData(int index);
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
   int getDataCount();
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  java.util.List<? extends SkuInfoOrBuilder>
+  java.util.List<? extends SkuInventoryInfoOrBuilder>
       getDataOrBuilderList();
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  SkuInfoOrBuilder getDataOrBuilder(
+  SkuInventoryInfoOrBuilder getDataOrBuilder(
       int index);
-
-  /**
-   * <code>uint64 total = 3;</code>
-   * @return The total.
-   */
-  long getTotal();
 }

@@ -6,38 +6,38 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.64.0)",
-    comments = "Source: pb/sku.proto")
+    comments = "Source: src/main/proto/sku.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SkuServiceGrpc {
 
   private SkuServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "sku.SkuService";
+  public static final String SERVICE_NAME = "sku.SkuService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.SkuReq,
-      com.example.wechatmerchant.skurpc.SkuResp> getGetSkuInfoMethod;
+  private static volatile io.grpc.MethodDescriptor<SkuReq,
+      SkuResp> getGetSkuInfoMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetSkuInfo",
-      requestType = com.example.wechatmerchant.skurpc.SkuReq.class,
-      responseType = com.example.wechatmerchant.skurpc.SkuResp.class,
+      requestType = SkuReq.class,
+      responseType = SkuResp.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.SkuReq,
-      com.example.wechatmerchant.skurpc.SkuResp> getGetSkuInfoMethod() {
-    io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.SkuReq, com.example.wechatmerchant.skurpc.SkuResp> getGetSkuInfoMethod;
+  public static io.grpc.MethodDescriptor<SkuReq,
+      SkuResp> getGetSkuInfoMethod() {
+    io.grpc.MethodDescriptor<SkuReq, SkuResp> getGetSkuInfoMethod;
     if ((getGetSkuInfoMethod = SkuServiceGrpc.getGetSkuInfoMethod) == null) {
       synchronized (SkuServiceGrpc.class) {
         if ((getGetSkuInfoMethod = SkuServiceGrpc.getGetSkuInfoMethod) == null) {
           SkuServiceGrpc.getGetSkuInfoMethod = getGetSkuInfoMethod =
-              io.grpc.MethodDescriptor.<com.example.wechatmerchant.skurpc.SkuReq, com.example.wechatmerchant.skurpc.SkuResp>newBuilder()
+              io.grpc.MethodDescriptor.<SkuReq, SkuResp>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSkuInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.example.wechatmerchant.skurpc.SkuReq.getDefaultInstance()))
+                  SkuReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.example.wechatmerchant.skurpc.SkuResp.getDefaultInstance()))
+                  SkuResp.getDefaultInstance()))
               .setSchemaDescriptor(new SkuServiceMethodDescriptorSupplier("GetSkuInfo"))
               .build();
         }
@@ -46,29 +46,29 @@ public final class SkuServiceGrpc {
     return getGetSkuInfoMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq,
-      com.example.wechatmerchant.skurpc.CommonRsp> getCreateSkuInfoMethod;
+  private static volatile io.grpc.MethodDescriptor<CreateOrUpdateSkuReq,
+      CommonRsp> getCreateSkuInfoMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateSkuInfo",
-      requestType = com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq.class,
-      responseType = com.example.wechatmerchant.skurpc.CommonRsp.class,
+      requestType = CreateOrUpdateSkuReq.class,
+      responseType = CommonRsp.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq,
-      com.example.wechatmerchant.skurpc.CommonRsp> getCreateSkuInfoMethod() {
-    io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq, com.example.wechatmerchant.skurpc.CommonRsp> getCreateSkuInfoMethod;
+  public static io.grpc.MethodDescriptor<CreateOrUpdateSkuReq,
+      CommonRsp> getCreateSkuInfoMethod() {
+    io.grpc.MethodDescriptor<CreateOrUpdateSkuReq, CommonRsp> getCreateSkuInfoMethod;
     if ((getCreateSkuInfoMethod = SkuServiceGrpc.getCreateSkuInfoMethod) == null) {
       synchronized (SkuServiceGrpc.class) {
         if ((getCreateSkuInfoMethod = SkuServiceGrpc.getCreateSkuInfoMethod) == null) {
           SkuServiceGrpc.getCreateSkuInfoMethod = getCreateSkuInfoMethod =
-              io.grpc.MethodDescriptor.<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq, com.example.wechatmerchant.skurpc.CommonRsp>newBuilder()
+              io.grpc.MethodDescriptor.<CreateOrUpdateSkuReq, CommonRsp>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSkuInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq.getDefaultInstance()))
+                  CreateOrUpdateSkuReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.example.wechatmerchant.skurpc.CommonRsp.getDefaultInstance()))
+                  CommonRsp.getDefaultInstance()))
               .setSchemaDescriptor(new SkuServiceMethodDescriptorSupplier("CreateSkuInfo"))
               .build();
         }
@@ -77,29 +77,29 @@ public final class SkuServiceGrpc {
     return getCreateSkuInfoMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq,
-      com.example.wechatmerchant.skurpc.CommonRsp> getUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<CreateOrUpdateSkuReq,
+      CommonRsp> getUpdateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Update",
-      requestType = com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq.class,
-      responseType = com.example.wechatmerchant.skurpc.CommonRsp.class,
+      requestType = CreateOrUpdateSkuReq.class,
+      responseType = CommonRsp.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq,
-      com.example.wechatmerchant.skurpc.CommonRsp> getUpdateMethod() {
-    io.grpc.MethodDescriptor<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq, com.example.wechatmerchant.skurpc.CommonRsp> getUpdateMethod;
+  public static io.grpc.MethodDescriptor<CreateOrUpdateSkuReq,
+      CommonRsp> getUpdateMethod() {
+    io.grpc.MethodDescriptor<CreateOrUpdateSkuReq, CommonRsp> getUpdateMethod;
     if ((getUpdateMethod = SkuServiceGrpc.getUpdateMethod) == null) {
       synchronized (SkuServiceGrpc.class) {
         if ((getUpdateMethod = SkuServiceGrpc.getUpdateMethod) == null) {
           SkuServiceGrpc.getUpdateMethod = getUpdateMethod =
-              io.grpc.MethodDescriptor.<com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq, com.example.wechatmerchant.skurpc.CommonRsp>newBuilder()
+              io.grpc.MethodDescriptor.<CreateOrUpdateSkuReq, CommonRsp>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Update"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq.getDefaultInstance()))
+                  CreateOrUpdateSkuReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.example.wechatmerchant.skurpc.CommonRsp.getDefaultInstance()))
+                  CommonRsp.getDefaultInstance()))
               .setSchemaDescriptor(new SkuServiceMethodDescriptorSupplier("Update"))
               .build();
         }
@@ -108,13 +108,44 @@ public final class SkuServiceGrpc {
     return getUpdateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<SkuInventoryReq,
+      SkuInventoryResp> getGetSkuInventoryInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSkuInventoryInfo",
+      requestType = SkuInventoryReq.class,
+      responseType = SkuInventoryResp.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<SkuInventoryReq,
+      SkuInventoryResp> getGetSkuInventoryInfoMethod() {
+    io.grpc.MethodDescriptor<SkuInventoryReq, SkuInventoryResp> getGetSkuInventoryInfoMethod;
+    if ((getGetSkuInventoryInfoMethod = SkuServiceGrpc.getGetSkuInventoryInfoMethod) == null) {
+      synchronized (SkuServiceGrpc.class) {
+        if ((getGetSkuInventoryInfoMethod = SkuServiceGrpc.getGetSkuInventoryInfoMethod) == null) {
+          SkuServiceGrpc.getGetSkuInventoryInfoMethod = getGetSkuInventoryInfoMethod =
+              io.grpc.MethodDescriptor.<SkuInventoryReq, SkuInventoryResp>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSkuInventoryInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  SkuInventoryReq.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  SkuInventoryResp.getDefaultInstance()))
+              .setSchemaDescriptor(new SkuServiceMethodDescriptorSupplier("GetSkuInventoryInfo"))
+              .build();
+        }
+      }
+    }
+    return getGetSkuInventoryInfoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static SkuServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SkuServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<SkuServiceStub>() {
-        @java.lang.Override
+        @Override
         public SkuServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new SkuServiceStub(channel, callOptions);
         }
@@ -129,7 +160,7 @@ public final class SkuServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SkuServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<SkuServiceBlockingStub>() {
-        @java.lang.Override
+        @Override
         public SkuServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new SkuServiceBlockingStub(channel, callOptions);
         }
@@ -144,7 +175,7 @@ public final class SkuServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SkuServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<SkuServiceFutureStub>() {
-        @java.lang.Override
+        @Override
         public SkuServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new SkuServiceFutureStub(channel, callOptions);
         }
@@ -158,23 +189,30 @@ public final class SkuServiceGrpc {
 
     /**
      */
-    default void getSkuInfo(com.example.wechatmerchant.skurpc.SkuReq request,
-        io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.SkuResp> responseObserver) {
+    default void getSkuInfo(SkuReq request,
+                            io.grpc.stub.StreamObserver<SkuResp> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSkuInfoMethod(), responseObserver);
     }
 
     /**
      */
-    default void createSkuInfo(com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request,
-        io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.CommonRsp> responseObserver) {
+    default void createSkuInfo(CreateOrUpdateSkuReq request,
+                               io.grpc.stub.StreamObserver<CommonRsp> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSkuInfoMethod(), responseObserver);
     }
 
     /**
      */
-    default void update(com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request,
-        io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.CommonRsp> responseObserver) {
+    default void update(CreateOrUpdateSkuReq request,
+                        io.grpc.stub.StreamObserver<CommonRsp> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getSkuInventoryInfo(SkuInventoryReq request,
+                                     io.grpc.stub.StreamObserver<SkuInventoryResp> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSkuInventoryInfoMethod(), responseObserver);
     }
   }
 
@@ -184,7 +222,7 @@ public final class SkuServiceGrpc {
   public static abstract class SkuServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return SkuServiceGrpc.bindService(this);
     }
   }
@@ -199,7 +237,7 @@ public final class SkuServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected SkuServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new SkuServiceStub(channel, callOptions);
@@ -207,26 +245,34 @@ public final class SkuServiceGrpc {
 
     /**
      */
-    public void getSkuInfo(com.example.wechatmerchant.skurpc.SkuReq request,
-        io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.SkuResp> responseObserver) {
+    public void getSkuInfo(SkuReq request,
+                           io.grpc.stub.StreamObserver<SkuResp> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSkuInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void createSkuInfo(com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request,
-        io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.CommonRsp> responseObserver) {
+    public void createSkuInfo(CreateOrUpdateSkuReq request,
+                              io.grpc.stub.StreamObserver<CommonRsp> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSkuInfoMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void update(com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request,
-        io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.CommonRsp> responseObserver) {
+    public void update(CreateOrUpdateSkuReq request,
+                       io.grpc.stub.StreamObserver<CommonRsp> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getSkuInventoryInfo(SkuInventoryReq request,
+                                    io.grpc.stub.StreamObserver<SkuInventoryResp> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSkuInventoryInfoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -240,7 +286,7 @@ public final class SkuServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected SkuServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new SkuServiceBlockingStub(channel, callOptions);
@@ -248,23 +294,30 @@ public final class SkuServiceGrpc {
 
     /**
      */
-    public com.example.wechatmerchant.skurpc.SkuResp getSkuInfo(com.example.wechatmerchant.skurpc.SkuReq request) {
+    public SkuResp getSkuInfo(SkuReq request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSkuInfoMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.example.wechatmerchant.skurpc.CommonRsp createSkuInfo(com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request) {
+    public CommonRsp createSkuInfo(CreateOrUpdateSkuReq request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSkuInfoMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.example.wechatmerchant.skurpc.CommonRsp update(com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request) {
+    public CommonRsp update(CreateOrUpdateSkuReq request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public SkuInventoryResp getSkuInventoryInfo(SkuInventoryReq request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSkuInventoryInfoMethod(), getCallOptions(), request);
     }
   }
 
@@ -278,7 +331,7 @@ public final class SkuServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected SkuServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new SkuServiceFutureStub(channel, callOptions);
@@ -286,32 +339,41 @@ public final class SkuServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.example.wechatmerchant.skurpc.SkuResp> getSkuInfo(
-        com.example.wechatmerchant.skurpc.SkuReq request) {
+    public com.google.common.util.concurrent.ListenableFuture<SkuResp> getSkuInfo(
+        SkuReq request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSkuInfoMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.example.wechatmerchant.skurpc.CommonRsp> createSkuInfo(
-        com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request) {
+    public com.google.common.util.concurrent.ListenableFuture<CommonRsp> createSkuInfo(
+        CreateOrUpdateSkuReq request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSkuInfoMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.example.wechatmerchant.skurpc.CommonRsp> update(
-        com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq request) {
+    public com.google.common.util.concurrent.ListenableFuture<CommonRsp> update(
+        CreateOrUpdateSkuReq request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<SkuInventoryResp> getSkuInventoryInfo(
+        SkuInventoryReq request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSkuInventoryInfoMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_GET_SKU_INFO = 0;
   private static final int METHODID_CREATE_SKU_INFO = 1;
   private static final int METHODID_UPDATE = 2;
+  private static final int METHODID_GET_SKU_INVENTORY_INFO = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -326,29 +388,33 @@ public final class SkuServiceGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_SKU_INFO:
-          serviceImpl.getSkuInfo((com.example.wechatmerchant.skurpc.SkuReq) request,
-              (io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.SkuResp>) responseObserver);
+          serviceImpl.getSkuInfo((SkuReq) request,
+              (io.grpc.stub.StreamObserver<SkuResp>) responseObserver);
           break;
         case METHODID_CREATE_SKU_INFO:
-          serviceImpl.createSkuInfo((com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq) request,
-              (io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.CommonRsp>) responseObserver);
+          serviceImpl.createSkuInfo((CreateOrUpdateSkuReq) request,
+              (io.grpc.stub.StreamObserver<CommonRsp>) responseObserver);
           break;
         case METHODID_UPDATE:
-          serviceImpl.update((com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq) request,
-              (io.grpc.stub.StreamObserver<com.example.wechatmerchant.skurpc.CommonRsp>) responseObserver);
+          serviceImpl.update((CreateOrUpdateSkuReq) request,
+              (io.grpc.stub.StreamObserver<CommonRsp>) responseObserver);
+          break;
+        case METHODID_GET_SKU_INVENTORY_INFO:
+          serviceImpl.getSkuInventoryInfo((SkuInventoryReq) request,
+              (io.grpc.stub.StreamObserver<SkuInventoryResp>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -364,23 +430,30 @@ public final class SkuServiceGrpc {
           getGetSkuInfoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.example.wechatmerchant.skurpc.SkuReq,
-              com.example.wechatmerchant.skurpc.SkuResp>(
+              SkuReq,
+              SkuResp>(
                 service, METHODID_GET_SKU_INFO)))
         .addMethod(
           getCreateSkuInfoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq,
-              com.example.wechatmerchant.skurpc.CommonRsp>(
+              CreateOrUpdateSkuReq,
+              CommonRsp>(
                 service, METHODID_CREATE_SKU_INFO)))
         .addMethod(
           getUpdateMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.example.wechatmerchant.skurpc.CreateOrUpdateSkuReq,
-              com.example.wechatmerchant.skurpc.CommonRsp>(
+              CreateOrUpdateSkuReq,
+              CommonRsp>(
                 service, METHODID_UPDATE)))
+        .addMethod(
+          getGetSkuInventoryInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              SkuInventoryReq,
+              SkuInventoryResp>(
+                service, METHODID_GET_SKU_INVENTORY_INFO)))
         .build();
   }
 
@@ -388,12 +461,12 @@ public final class SkuServiceGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     SkuServiceBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.example.wechatmerchant.skurpc.Sku.getDescriptor();
+      return Sku.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("SkuService");
     }
@@ -407,13 +480,13 @@ public final class SkuServiceGrpc {
   private static final class SkuServiceMethodDescriptorSupplier
       extends SkuServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final java.lang.String methodName;
+    private final String methodName;
 
-    SkuServiceMethodDescriptorSupplier(java.lang.String methodName) {
+    SkuServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }
@@ -432,6 +505,7 @@ public final class SkuServiceGrpc {
               .addMethod(getGetSkuInfoMethod())
               .addMethod(getCreateSkuInfoMethod())
               .addMethod(getUpdateMethod())
+              .addMethod(getGetSkuInventoryInfoMethod())
               .build();
         }
       }
