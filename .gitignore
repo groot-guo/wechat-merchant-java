@@ -35,4 +35,4 @@ build/
 ### log ###
 log
 
-protoc-gen-grpc-java.exe.exe
+protoc-gen-grpc-java.exe
