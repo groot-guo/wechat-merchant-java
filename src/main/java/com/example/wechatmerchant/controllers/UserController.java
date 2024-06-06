@@ -1,12 +1,12 @@
 package com.example.wechatmerchant.controllers;
 
 
+import com.example.wechatmerchant.pojo.vo.CommonVO;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.wechatmerchant.pojo.vo.UserVO;
-import com.example.wechatmerchant.repository.db.entity.UserEntity;
 import com.example.wechatmerchant.service.UserService;
 
 @RestController
@@ -16,17 +16,17 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/api/user/{openId}")
-    public UserEntity getUser(@PathVariable String openId) {
+    public UserVO.UserInfoRsp getUser(@PathVariable String openId) {
         return userService.getUserById(openId);
     }
 
     @PostMapping("/api/user/register")
-    public UserVO.UserResp registerUser(@RequestBody @Validated UserVO.RegisterUserReq userReq) {
+    public CommonVO.CommonRsp registerUser(@RequestBody @Validated UserVO.RegisterUserReq userReq) {
         return userService.registerUser(userReq);
     }
 
     @PostMapping("/api/user/login")
-    public UserVO.UserResp login(@RequestBody @Validated UserVO.UserLoginReq userLoginReq) {
+    public CommonVO.CommonRsp login(@RequestBody @Validated UserVO.UserLoginReq userLoginReq) {
         // validate req todo
         return userService.login(userLoginReq);
     }
