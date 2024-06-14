@@ -3,8 +3,8 @@
 
 package com.example.wechatmerchant.skurpc;
 
-public interface SkuRespOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:sku.SkuResp)
+public interface GetItemInfoRespOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:sku.GetItemInfoResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,27 +23,27 @@ public interface SkuRespOrBuilder extends
   com.example.wechatmerchant.skurpc.CommonRspOrBuilder getCommonOrBuilder();
 
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
-  java.util.List<com.example.wechatmerchant.skurpc.SkuInfo> 
+  java.util.List<com.example.wechatmerchant.skurpc.ItemInfo> 
       getDataList();
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
-  com.example.wechatmerchant.skurpc.SkuInfo getData(int index);
+  com.example.wechatmerchant.skurpc.ItemInfo getData(int index);
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
   int getDataCount();
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
-  java.util.List<? extends com.example.wechatmerchant.skurpc.SkuInfoOrBuilder> 
+  java.util.List<? extends com.example.wechatmerchant.skurpc.ItemInfoOrBuilder> 
       getDataOrBuilderList();
   /**
-   * <code>repeated .sku.SkuInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
-  com.example.wechatmerchant.skurpc.SkuInfoOrBuilder getDataOrBuilder(
+  com.example.wechatmerchant.skurpc.ItemInfoOrBuilder getDataOrBuilder(
       int index);
 
   /**

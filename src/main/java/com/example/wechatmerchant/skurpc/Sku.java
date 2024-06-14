@@ -35,10 +35,30 @@ public final class Sku {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_sku_SkuInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_sku_CreateOrUpdateSkuReq_descriptor;
+    internal_static_sku_CreateSkuReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_sku_CreateOrUpdateSkuReq_fieldAccessorTable;
+      internal_static_sku_CreateSkuReq_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_GetItemInfoReq_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_GetItemInfoReq_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_GetItemInfoResp_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_GetItemInfoResp_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_ItemInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_ItemInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_CreateOrUpdateItemInfoReq_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_CreateOrUpdateItemInfoReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_sku_SkuInventoryReq_descriptor;
   static final 
@@ -54,6 +74,31 @@ public final class Sku {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_sku_SkuInventoryInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_UpdateSkuInventoryInfoReq_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_UpdateSkuInventoryInfoReq_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_GetShopInfoReq_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_GetShopInfoReq_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_GetShopInfoResp_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_GetShopInfoResp_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_CreateShopReq_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_CreateShopReq_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sku_UpdateShopReq_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sku_UpdateShopReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -62,32 +107,63 @@ public final class Sku {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\030src/main/proto/sku.proto\022\003sku\"&\n\tCommo" +
-      "nRsp\022\014\n\004code\030\001 \001(\004\022\013\n\003msg\030\002 \001(\t\"@\n\006SkuRe" +
+      "nRsp\022\014\n\004code\030\001 \001(\003\022\013\n\003msg\030\002 \001(\t\"@\n\006SkuRe" +
       "q\022\016\n\006sku_id\030\001 \003(\t\022\023\n\013page_number\030\002 \001(\004\022\021" +
       "\n\tpage_size\030\003 \001(\004\"T\n\007SkuResp\022\036\n\006common\030\001" +
       " \001(\0132\016.sku.CommonRsp\022\032\n\004data\030\002 \003(\0132\014.sku" +
-      ".SkuInfo\022\r\n\005total\030\003 \001(\004\"\252\001\n\007SkuInfo\022\016\n\006s" +
+      ".SkuInfo\022\r\n\005total\030\003 \001(\r\"\252\001\n\007SkuInfo\022\016\n\006s" +
       "ku_id\030\001 \001(\t\022\020\n\010sku_name\030\002 \001(\t\022\021\n\tsku_ima" +
       "ge\030\003 \001(\t\022\017\n\007item_id\030\004 \001(\r\022\021\n\titem_name\030\005" +
       " \001(\t\022\022\n\nproduct_id\030\006 \001(\r\022\024\n\014product_name" +
-      "\030\007 \001(\t\022\r\n\005ctime\030\010 \001(\004\022\r\n\005mtime\030\t \001(\004\"^\n\024" +
-      "CreateOrUpdateSkuReq\022\016\n\006sku_id\030\001 \001(\t\022\020\n\010" +
-      "sku_name\030\002 \001(\t\022\021\n\tsku_image\030\003 \001(\t\022\021\n\tsku" +
-      "_count\030\004 \001(\t\"!\n\017SkuInventoryReq\022\016\n\006sku_i" +
-      "d\030\001 \001(\t\"W\n\020SkuInventoryResp\022\036\n\006common\030\001 " +
-      "\001(\0132\016.sku.CommonRsp\022#\n\004data\030\002 \003(\0132\025.sku." +
-      "SkuInventoryInfo\"M\n\020SkuInventoryInfo\022\016\n\006" +
-      "sku_id\030\001 \001(\t\022\025\n\rinventory_qty\030\002 \001(\004\022\022\n\nd" +
-      "amage_qty\030\003 \001(\0042\352\001\n\nSkuService\022\'\n\nGetSku" +
-      "Info\022\013.sku.SkuReq\032\014.sku.SkuResp\022:\n\rCreat" +
-      "eSkuInfo\022\031.sku.CreateOrUpdateSkuReq\032\016.sk" +
-      "u.CommonRsp\0223\n\006Update\022\031.sku.CreateOrUpda" +
-      "teSkuReq\032\016.sku.CommonRsp\022B\n\023GetSkuInvent" +
-      "oryInfo\022\024.sku.SkuInventoryReq\032\025.sku.SkuI" +
-      "nventoryRespB,\n!com.example.wechatmercha" +
-      "nt.skurpcP\001Z\005./skub\006proto3"
+      "\030\007 \001(\t\022\r\n\005ctime\030\010 \001(\r\022\r\n\005mtime\030\t \001(\r\"r\n\014" +
+      "CreateSkuReq\022\017\n\007item_id\030\001 \001(\t\022\020\n\010item_na" +
+      "m\030\002 \001(\t\022\022\n\nproduct_id\030\003 \001(\t\022\024\n\014product_n" +
+      "ame\030\004 \001(\t\022\025\n\rinventory_qty\030\005 \001(\r\"q\n\016GetI" +
+      "temInfoReq\022\017\n\007item_id\030\001 \001(\r\022\021\n\titem_name" +
+      "\030\002 \001(\t\022\023\n\013category_id\030\003 \001(\r\022\025\n\rcategory_" +
+      "name\030\004 \001(\t\022\017\n\007shop_id\030\005 \001(\r\"]\n\017GetItemIn" +
+      "foResp\022\036\n\006common\030\001 \001(\0132\016.sku.CommonRsp\022\033" +
+      "\n\004data\030\002 \003(\0132\r.sku.ItemInfo\022\r\n\005total\030\003 \001" +
+      "(\r\"k\n\010ItemInfo\022\017\n\007item_id\030\001 \001(\r\022\021\n\titem_" +
+      "name\030\002 \001(\t\022\023\n\013category_id\030\003 \001(\r\022\025\n\rcateg" +
+      "ory_name\030\004 \001(\t\022\017\n\007shop_id\030\005 \001(\r\"{\n\031Creat" +
+      "eOrUpdateItemInfoReq\022\017\n\007item_id\030\001 \001(\r\022\021\n" +
+      "\titem_name\030\002 \001(\t\022\023\n\013category_id\030\003 \001(\r\022\024\n" +
+      "\014category_nam\030\004 \001(\t\022\017\n\007shop_id\030\005 \001(\r\"!\n\017" +
+      "SkuInventoryReq\022\016\n\006sku_id\030\001 \003(\t\"W\n\020SkuIn" +
+      "ventoryResp\022\036\n\006common\030\001 \001(\0132\016.sku.Common" +
+      "Rsp\022#\n\004data\030\002 \003(\0132\025.sku.SkuInventoryInfo" +
+      "\"M\n\020SkuInventoryInfo\022\016\n\006sku_id\030\001 \001(\t\022\025\n\r" +
+      "inventory_qty\030\002 \001(\r\022\022\n\ndamage_qty\030\003 \001(\r\"" +
+      "V\n\031UpdateSkuInventoryInfoReq\022\016\n\006sku_id\030\001" +
+      " \001(\t\022\025\n\rinventory_qty\030\002 \001(\r\022\022\n\ndamage_qt" +
+      "y\030\003 \001(\r\"4\n\016GetShopInfoReq\022\017\n\007shop_id\030\001 \001" +
+      "(\r\022\021\n\tshop_name\030\002 \001(\t\"U\n\017GetShopInfoResp" +
+      "\022\036\n\006common\030\001 \001(\0132\016.sku.CommonRsp\022\017\n\007shop" +
+      "_id\030\002 \001(\r\022\021\n\tshop_name\030\003 \001(\t\"3\n\rCreateSh" +
+      "opReq\022\017\n\007shop_id\030\001 \001(\r\022\021\n\tshop_name\030\002 \001(" +
+      "\t\"3\n\rUpdateShopReq\022\017\n\007shop_id\030\001 \001(\r\022\021\n\ts" +
+      "hop_name\030\002 \001(\t2i\n\nSkuService\022\'\n\nGetSkuIn" +
+      "fo\022\013.sku.SkuReq\032\014.sku.SkuResp\0222\n\rCreateS" +
+      "kuInfo\022\021.sku.CreateSkuReq\032\016.sku.CommonRs" +
+      "p2\313\001\n\013ItemService\0228\n\013GetItemInfo\022\023.sku.G" +
+      "etItemInfoReq\032\024.sku.GetItemInfoResp\022@\n\016C" +
+      "reateItemInfo\022\036.sku.CreateOrUpdateItemIn" +
+      "foReq\032\016.sku.CommonRsp\022@\n\016UpdateItemInfo\022" +
+      "\036.sku.CreateOrUpdateItemInfoReq\032\016.sku.Co" +
+      "mmonRsp2\243\001\n\023SkuInventoryService\022B\n\023GetSk" +
+      "uInventoryInfo\022\024.sku.SkuInventoryReq\032\025.s" +
+      "ku.SkuInventoryResp\022H\n\026UpdateSkuInventor" +
+      "yInfo\022\036.sku.UpdateSkuInventoryInfoReq\032\016." +
+      "sku.CommonRsp2\263\001\n\013ShopService\0228\n\013GetShop" +
+      "Info\022\023.sku.GetShopInfoReq\032\024.sku.GetShopI" +
+      "nfoResp\0224\n\016CreateShopInfo\022\022.sku.CreateSh" +
+      "opReq\032\016.sku.CommonRsp\0224\n\016UpdateShopInfo\022" +
+      "\022.sku.UpdateShopReq\032\016.sku.CommonRspB,\n!c" +
+      "om.example.wechatmerchant.skurpcP\001Z\005./sk" +
+      "ub\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -98,49 +174,103 @@ public final class Sku {
     internal_static_sku_CommonRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_sku_CommonRsp_descriptor,
-        new String[] { "Code", "Msg", });
+        new java.lang.String[] { "Code", "Msg", });
     internal_static_sku_SkuReq_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_sku_SkuReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_sku_SkuReq_descriptor,
-        new String[] { "SkuId", "PageNumber", "PageSize", });
+        new java.lang.String[] { "SkuId", "PageNumber", "PageSize", });
     internal_static_sku_SkuResp_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_sku_SkuResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_sku_SkuResp_descriptor,
-        new String[] { "Common", "Data", "Total", });
+        new java.lang.String[] { "Common", "Data", "Total", });
     internal_static_sku_SkuInfo_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_sku_SkuInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_sku_SkuInfo_descriptor,
-        new String[] { "SkuId", "SkuName", "SkuImage", "ItemId", "ItemName", "ProductId", "ProductName", "Ctime", "Mtime", });
-    internal_static_sku_CreateOrUpdateSkuReq_descriptor =
+        new java.lang.String[] { "SkuId", "SkuName", "SkuImage", "ItemId", "ItemName", "ProductId", "ProductName", "Ctime", "Mtime", });
+    internal_static_sku_CreateSkuReq_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_sku_CreateOrUpdateSkuReq_fieldAccessorTable = new
+    internal_static_sku_CreateSkuReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_sku_CreateOrUpdateSkuReq_descriptor,
-        new String[] { "SkuId", "SkuName", "SkuImage", "SkuCount", });
-    internal_static_sku_SkuInventoryReq_descriptor =
+        internal_static_sku_CreateSkuReq_descriptor,
+        new java.lang.String[] { "ItemId", "ItemNam", "ProductId", "ProductName", "InventoryQty", });
+    internal_static_sku_GetItemInfoReq_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_sku_GetItemInfoReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_GetItemInfoReq_descriptor,
+        new java.lang.String[] { "ItemId", "ItemName", "CategoryId", "CategoryName", "ShopId", });
+    internal_static_sku_GetItemInfoResp_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_sku_GetItemInfoResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_GetItemInfoResp_descriptor,
+        new java.lang.String[] { "Common", "Data", "Total", });
+    internal_static_sku_ItemInfo_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_sku_ItemInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_ItemInfo_descriptor,
+        new java.lang.String[] { "ItemId", "ItemName", "CategoryId", "CategoryName", "ShopId", });
+    internal_static_sku_CreateOrUpdateItemInfoReq_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_sku_CreateOrUpdateItemInfoReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_CreateOrUpdateItemInfoReq_descriptor,
+        new java.lang.String[] { "ItemId", "ItemName", "CategoryId", "CategoryNam", "ShopId", });
+    internal_static_sku_SkuInventoryReq_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_sku_SkuInventoryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_sku_SkuInventoryReq_descriptor,
-        new String[] { "SkuId", });
+        new java.lang.String[] { "SkuId", });
     internal_static_sku_SkuInventoryResp_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_sku_SkuInventoryResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_sku_SkuInventoryResp_descriptor,
-        new String[] { "Common", "Data", });
+        new java.lang.String[] { "Common", "Data", });
     internal_static_sku_SkuInventoryInfo_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_sku_SkuInventoryInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_sku_SkuInventoryInfo_descriptor,
-        new String[] { "SkuId", "InventoryQty", "DamageQty", });
+        new java.lang.String[] { "SkuId", "InventoryQty", "DamageQty", });
+    internal_static_sku_UpdateSkuInventoryInfoReq_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_sku_UpdateSkuInventoryInfoReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_UpdateSkuInventoryInfoReq_descriptor,
+        new java.lang.String[] { "SkuId", "InventoryQty", "DamageQty", });
+    internal_static_sku_GetShopInfoReq_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_sku_GetShopInfoReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_GetShopInfoReq_descriptor,
+        new java.lang.String[] { "ShopId", "ShopName", });
+    internal_static_sku_GetShopInfoResp_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_sku_GetShopInfoResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_GetShopInfoResp_descriptor,
+        new java.lang.String[] { "Common", "ShopId", "ShopName", });
+    internal_static_sku_CreateShopReq_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_sku_CreateShopReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_CreateShopReq_descriptor,
+        new java.lang.String[] { "ShopId", "ShopName", });
+    internal_static_sku_UpdateShopReq_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_sku_UpdateShopReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sku_UpdateShopReq_descriptor,
+        new java.lang.String[] { "ShopId", "ShopName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

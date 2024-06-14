@@ -3,8 +3,8 @@
 
 package com.example.wechatmerchant.skurpc;
 
-public interface SkuInventoryInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:sku.SkuInventoryInfo)
+public interface UpdateSkuInventoryInfoReqOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:sku.UpdateSkuInventoryInfoReq)
     com.google.protobuf.MessageOrBuilder {
 
   /**

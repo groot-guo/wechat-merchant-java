@@ -11,7 +11,7 @@ public interface SkuInfoOrBuilder extends
    * <code>string sku_id = 1;</code>
    * @return The skuId.
    */
-  String getSkuId();
+  java.lang.String getSkuId();
   /**
    * <code>string sku_id = 1;</code>
    * @return The bytes for skuId.
@@ -23,7 +23,7 @@ public interface SkuInfoOrBuilder extends
    * <code>string sku_name = 2;</code>
    * @return The skuName.
    */
-  String getSkuName();
+  java.lang.String getSkuName();
   /**
    * <code>string sku_name = 2;</code>
    * @return The bytes for skuName.
@@ -35,7 +35,7 @@ public interface SkuInfoOrBuilder extends
    * <code>string sku_image = 3;</code>
    * @return The skuImage.
    */
-  String getSkuImage();
+  java.lang.String getSkuImage();
   /**
    * <code>string sku_image = 3;</code>
    * @return The bytes for skuImage.
@@ -53,7 +53,7 @@ public interface SkuInfoOrBuilder extends
    * <code>string item_name = 5;</code>
    * @return The itemName.
    */
-  String getItemName();
+  java.lang.String getItemName();
   /**
    * <code>string item_name = 5;</code>
    * @return The bytes for itemName.
@@ -71,7 +71,7 @@ public interface SkuInfoOrBuilder extends
    * <code>string product_name = 7;</code>
    * @return The productName.
    */
-  String getProductName();
+  java.lang.String getProductName();
   /**
    * <code>string product_name = 7;</code>
    * @return The bytes for productName.
@@ -80,14 +80,14 @@ public interface SkuInfoOrBuilder extends
       getProductNameBytes();
 
   /**
-   * <code>uint64 ctime = 8;</code>
+   * <code>uint32 ctime = 8;</code>
    * @return The ctime.
    */
-  long getCtime();
+  int getCtime();
 
   /**
-   * <code>uint64 mtime = 9;</code>
+   * <code>uint32 mtime = 9;</code>
    * @return The mtime.
    */
-  long getMtime();
+  int getMtime();
 }

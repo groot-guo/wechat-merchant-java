@@ -11,7 +11,7 @@ public interface SkuReqOrBuilder extends
    * <code>repeated string sku_id = 1;</code>
    * @return A list containing the skuId.
    */
-  java.util.List<String>
+  java.util.List<java.lang.String>
       getSkuIdList();
   /**
    * <code>repeated string sku_id = 1;</code>
@@ -23,7 +23,7 @@ public interface SkuReqOrBuilder extends
    * @param index The index of the element to return.
    * @return The skuId at the given index.
    */
-  String getSkuId(int index);
+  java.lang.String getSkuId(int index);
   /**
    * <code>repeated string sku_id = 1;</code>
    * @param index The index of the value to return.

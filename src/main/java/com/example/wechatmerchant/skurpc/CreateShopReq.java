@@ -4,26 +4,26 @@
 package com.example.wechatmerchant.skurpc;
 
 /**
- * Protobuf type {@code sku.CommonRsp}
+ * Protobuf type {@code sku.CreateShopReq}
  */
-public final class CommonRsp extends
+public final class CreateShopReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:sku.CommonRsp)
-    CommonRspOrBuilder {
+    // @@protoc_insertion_point(message_implements:sku.CreateShopReq)
+    CreateShopReqOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CommonRsp.newBuilder() to construct.
-  private CommonRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateShopReq.newBuilder() to construct.
+  private CreateShopReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CommonRsp() {
-    msg_ = "";
+  private CreateShopReq() {
+    shopName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CommonRsp();
+    return new CreateShopReq();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CommonRsp(
+  private CreateShopReq(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -51,13 +51,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            code_ = input.readInt64();
+            shopId_ = input.readUInt32();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            msg_ = s;
+            shopName_ = s;
             break;
           }
           default: {
@@ -81,60 +81,60 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CommonRsp_descriptor;
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateShopReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CommonRsp_fieldAccessorTable
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateShopReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.wechatmerchant.skurpc.CommonRsp.class, com.example.wechatmerchant.skurpc.CommonRsp.Builder.class);
+            com.example.wechatmerchant.skurpc.CreateShopReq.class, com.example.wechatmerchant.skurpc.CreateShopReq.Builder.class);
   }
 
-  public static final int CODE_FIELD_NUMBER = 1;
-  private long code_;
+  public static final int SHOP_ID_FIELD_NUMBER = 1;
+  private int shopId_;
   /**
-   * <code>int64 code = 1;</code>
-   * @return The code.
+   * <code>uint32 shop_id = 1;</code>
+   * @return The shopId.
    */
   @java.lang.Override
-  public long getCode() {
-    return code_;
+  public int getShopId() {
+    return shopId_;
   }
 
-  public static final int MSG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object msg_;
+  public static final int SHOP_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object shopName_;
   /**
-   * <code>string msg = 2;</code>
-   * @return The msg.
+   * <code>string shop_name = 2;</code>
+   * @return The shopName.
    */
   @java.lang.Override
-  public java.lang.String getMsg() {
-    java.lang.Object ref = msg_;
+  public java.lang.String getShopName() {
+    java.lang.Object ref = shopName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      msg_ = s;
+      shopName_ = s;
       return s;
     }
   }
   /**
-   * <code>string msg = 2;</code>
-   * @return The bytes for msg.
+   * <code>string shop_name = 2;</code>
+   * @return The bytes for shopName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getMsgBytes() {
-    java.lang.Object ref = msg_;
+      getShopNameBytes() {
+    java.lang.Object ref = shopName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      msg_ = b;
+      shopName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -155,11 +155,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (code_ != 0L) {
-      output.writeInt64(1, code_);
+    if (shopId_ != 0) {
+      output.writeUInt32(1, shopId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shopName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shopName_);
     }
     unknownFields.writeTo(output);
   }
@@ -170,12 +170,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (code_ != 0L) {
+    if (shopId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, code_);
+        .computeUInt32Size(1, shopId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shopName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shopName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,15 +187,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.wechatmerchant.skurpc.CommonRsp)) {
+    if (!(obj instanceof com.example.wechatmerchant.skurpc.CreateShopReq)) {
       return super.equals(obj);
     }
-    com.example.wechatmerchant.skurpc.CommonRsp other = (com.example.wechatmerchant.skurpc.CommonRsp) obj;
+    com.example.wechatmerchant.skurpc.CreateShopReq other = (com.example.wechatmerchant.skurpc.CreateShopReq) obj;
 
-    if (getCode()
-        != other.getCode()) return false;
-    if (!getMsg()
-        .equals(other.getMsg())) return false;
+    if (getShopId()
+        != other.getShopId()) return false;
+    if (!getShopName()
+        .equals(other.getShopName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -207,79 +207,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CODE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCode());
-    hash = (37 * hash) + MSG_FIELD_NUMBER;
-    hash = (53 * hash) + getMsg().hashCode();
+    hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getShopId();
+    hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getShopName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(byte[] data)
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseDelimitedFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseDelimitedFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.CommonRsp parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateShopReq parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -292,7 +291,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.wechatmerchant.skurpc.CommonRsp prototype) {
+  public static Builder newBuilder(com.example.wechatmerchant.skurpc.CreateShopReq prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -308,26 +307,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code sku.CommonRsp}
+   * Protobuf type {@code sku.CreateShopReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:sku.CommonRsp)
-      com.example.wechatmerchant.skurpc.CommonRspOrBuilder {
+      // @@protoc_insertion_point(builder_implements:sku.CreateShopReq)
+      com.example.wechatmerchant.skurpc.CreateShopReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CommonRsp_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateShopReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CommonRsp_fieldAccessorTable
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateShopReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.wechatmerchant.skurpc.CommonRsp.class, com.example.wechatmerchant.skurpc.CommonRsp.Builder.class);
+              com.example.wechatmerchant.skurpc.CreateShopReq.class, com.example.wechatmerchant.skurpc.CreateShopReq.Builder.class);
     }
 
-    // Construct using com.example.wechatmerchant.skurpc.CommonRsp.newBuilder()
+    // Construct using com.example.wechatmerchant.skurpc.CreateShopReq.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -345,9 +344,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      code_ = 0L;
+      shopId_ = 0;
 
-      msg_ = "";
+      shopName_ = "";
 
       return this;
     }
@@ -355,17 +354,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CommonRsp_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateShopReq_descriptor;
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.CommonRsp getDefaultInstanceForType() {
-      return com.example.wechatmerchant.skurpc.CommonRsp.getDefaultInstance();
+    public com.example.wechatmerchant.skurpc.CreateShopReq getDefaultInstanceForType() {
+      return com.example.wechatmerchant.skurpc.CreateShopReq.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.CommonRsp build() {
-      com.example.wechatmerchant.skurpc.CommonRsp result = buildPartial();
+    public com.example.wechatmerchant.skurpc.CreateShopReq build() {
+      com.example.wechatmerchant.skurpc.CreateShopReq result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -373,10 +372,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.CommonRsp buildPartial() {
-      com.example.wechatmerchant.skurpc.CommonRsp result = new com.example.wechatmerchant.skurpc.CommonRsp(this);
-      result.code_ = code_;
-      result.msg_ = msg_;
+    public com.example.wechatmerchant.skurpc.CreateShopReq buildPartial() {
+      com.example.wechatmerchant.skurpc.CreateShopReq result = new com.example.wechatmerchant.skurpc.CreateShopReq(this);
+      result.shopId_ = shopId_;
+      result.shopName_ = shopName_;
       onBuilt();
       return result;
     }
@@ -415,21 +414,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.wechatmerchant.skurpc.CommonRsp) {
-        return mergeFrom((com.example.wechatmerchant.skurpc.CommonRsp)other);
+      if (other instanceof com.example.wechatmerchant.skurpc.CreateShopReq) {
+        return mergeFrom((com.example.wechatmerchant.skurpc.CreateShopReq)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.wechatmerchant.skurpc.CommonRsp other) {
-      if (other == com.example.wechatmerchant.skurpc.CommonRsp.getDefaultInstance()) return this;
-      if (other.getCode() != 0L) {
-        setCode(other.getCode());
+    public Builder mergeFrom(com.example.wechatmerchant.skurpc.CreateShopReq other) {
+      if (other == com.example.wechatmerchant.skurpc.CreateShopReq.getDefaultInstance()) return this;
+      if (other.getShopId() != 0) {
+        setShopId(other.getShopId());
       }
-      if (!other.getMsg().isEmpty()) {
-        msg_ = other.msg_;
+      if (!other.getShopName().isEmpty()) {
+        shopName_ = other.shopName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -447,11 +446,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.wechatmerchant.skurpc.CommonRsp parsedMessage = null;
+      com.example.wechatmerchant.skurpc.CreateShopReq parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.wechatmerchant.skurpc.CommonRsp) e.getUnfinishedMessage();
+        parsedMessage = (com.example.wechatmerchant.skurpc.CreateShopReq) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -461,109 +460,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long code_ ;
+    private int shopId_ ;
     /**
-     * <code>int64 code = 1;</code>
-     * @return The code.
+     * <code>uint32 shop_id = 1;</code>
+     * @return The shopId.
      */
     @java.lang.Override
-    public long getCode() {
-      return code_;
+    public int getShopId() {
+      return shopId_;
     }
     /**
-     * <code>int64 code = 1;</code>
-     * @param value The code to set.
+     * <code>uint32 shop_id = 1;</code>
+     * @param value The shopId to set.
      * @return This builder for chaining.
      */
-    public Builder setCode(long value) {
+    public Builder setShopId(int value) {
       
-      code_ = value;
+      shopId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 code = 1;</code>
+     * <code>uint32 shop_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCode() {
+    public Builder clearShopId() {
       
-      code_ = 0L;
+      shopId_ = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object msg_ = "";
+    private java.lang.Object shopName_ = "";
     /**
-     * <code>string msg = 2;</code>
-     * @return The msg.
+     * <code>string shop_name = 2;</code>
+     * @return The shopName.
      */
-    public java.lang.String getMsg() {
-      java.lang.Object ref = msg_;
+    public java.lang.String getShopName() {
+      java.lang.Object ref = shopName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        msg_ = s;
+        shopName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string msg = 2;</code>
-     * @return The bytes for msg.
+     * <code>string shop_name = 2;</code>
+     * @return The bytes for shopName.
      */
     public com.google.protobuf.ByteString
-        getMsgBytes() {
-      java.lang.Object ref = msg_;
+        getShopNameBytes() {
+      java.lang.Object ref = shopName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        msg_ = b;
+        shopName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string msg = 2;</code>
-     * @param value The msg to set.
+     * <code>string shop_name = 2;</code>
+     * @param value The shopName to set.
      * @return This builder for chaining.
      */
-    public Builder setMsg(
+    public Builder setShopName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      msg_ = value;
+      shopName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string msg = 2;</code>
+     * <code>string shop_name = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMsg() {
+    public Builder clearShopName() {
       
-      msg_ = getDefaultInstance().getMsg();
+      shopName_ = getDefaultInstance().getShopName();
       onChanged();
       return this;
     }
     /**
-     * <code>string msg = 2;</code>
-     * @param value The bytes for msg to set.
+     * <code>string shop_name = 2;</code>
+     * @param value The bytes for shopName to set.
      * @return This builder for chaining.
      */
-    public Builder setMsgBytes(
+    public Builder setShopNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      msg_ = value;
+      shopName_ = value;
       onChanged();
       return this;
     }
@@ -580,41 +579,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:sku.CommonRsp)
+    // @@protoc_insertion_point(builder_scope:sku.CreateShopReq)
   }
 
-  // @@protoc_insertion_point(class_scope:sku.CommonRsp)
-  private static final com.example.wechatmerchant.skurpc.CommonRsp DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:sku.CreateShopReq)
+  private static final com.example.wechatmerchant.skurpc.CreateShopReq DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.wechatmerchant.skurpc.CommonRsp();
+    DEFAULT_INSTANCE = new com.example.wechatmerchant.skurpc.CreateShopReq();
   }
 
-  public static com.example.wechatmerchant.skurpc.CommonRsp getDefaultInstance() {
+  public static com.example.wechatmerchant.skurpc.CreateShopReq getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CommonRsp>
-      PARSER = new com.google.protobuf.AbstractParser<CommonRsp>() {
+  private static final com.google.protobuf.Parser<CreateShopReq>
+      PARSER = new com.google.protobuf.AbstractParser<CreateShopReq>() {
     @java.lang.Override
-    public CommonRsp parsePartialFrom(
+    public CreateShopReq parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CommonRsp(input, extensionRegistry);
+      return new CreateShopReq(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CommonRsp> parser() {
+  public static com.google.protobuf.Parser<CreateShopReq> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CommonRsp> getParserForType() {
+  public com.google.protobuf.Parser<CreateShopReq> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.example.wechatmerchant.skurpc.CommonRsp getDefaultInstanceForType() {
+  public com.example.wechatmerchant.skurpc.CreateShopReq getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

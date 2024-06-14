@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     data_ = java.util.Collections.emptyList();
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new SkuResp();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -51,11 +51,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            CommonRsp.Builder subBuilder = null;
+            com.example.wechatmerchant.skurpc.CommonRsp.Builder subBuilder = null;
             if (common_ != null) {
               subBuilder = common_.toBuilder();
             }
-            common_ = input.readMessage(CommonRsp.parser(), extensionRegistry);
+            common_ = input.readMessage(com.example.wechatmerchant.skurpc.CommonRsp.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(common_);
               common_ = subBuilder.buildPartial();
@@ -65,16 +65,16 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              data_ = new java.util.ArrayList<SkuInfo>();
+              data_ = new java.util.ArrayList<com.example.wechatmerchant.skurpc.SkuInfo>();
               mutable_bitField0_ |= 0x00000001;
             }
             data_.add(
-                input.readMessage(SkuInfo.parser(), extensionRegistry));
+                input.readMessage(com.example.wechatmerchant.skurpc.SkuInfo.parser(), extensionRegistry));
             break;
           }
           case 24: {
 
-            total_ = input.readUInt64();
+            total_ = input.readUInt32();
             break;
           }
           default: {
@@ -101,24 +101,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Sku.internal_static_sku_SkuResp_descriptor;
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuResp_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Sku.internal_static_sku_SkuResp_fieldAccessorTable
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuResp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            SkuResp.class, Builder.class);
+            com.example.wechatmerchant.skurpc.SkuResp.class, com.example.wechatmerchant.skurpc.SkuResp.Builder.class);
   }
 
   public static final int COMMON_FIELD_NUMBER = 1;
-  private CommonRsp common_;
+  private com.example.wechatmerchant.skurpc.CommonRsp common_;
   /**
    * <code>.sku.CommonRsp common = 1;</code>
    * @return Whether the common field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasCommon() {
     return common_ != null;
   }
@@ -126,71 +126,71 @@ private static final long serialVersionUID = 0L;
    * <code>.sku.CommonRsp common = 1;</code>
    * @return The common.
    */
-  @Override
-  public CommonRsp getCommon() {
-    return common_ == null ? CommonRsp.getDefaultInstance() : common_;
+  @java.lang.Override
+  public com.example.wechatmerchant.skurpc.CommonRsp getCommon() {
+    return common_ == null ? com.example.wechatmerchant.skurpc.CommonRsp.getDefaultInstance() : common_;
   }
   /**
    * <code>.sku.CommonRsp common = 1;</code>
    */
-  @Override
-  public CommonRspOrBuilder getCommonOrBuilder() {
+  @java.lang.Override
+  public com.example.wechatmerchant.skurpc.CommonRspOrBuilder getCommonOrBuilder() {
     return getCommon();
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-  private java.util.List<SkuInfo> data_;
+  private java.util.List<com.example.wechatmerchant.skurpc.SkuInfo> data_;
   /**
    * <code>repeated .sku.SkuInfo data = 2;</code>
    */
-  @Override
-  public java.util.List<SkuInfo> getDataList() {
+  @java.lang.Override
+  public java.util.List<com.example.wechatmerchant.skurpc.SkuInfo> getDataList() {
     return data_;
   }
   /**
    * <code>repeated .sku.SkuInfo data = 2;</code>
    */
-  @Override
-  public java.util.List<? extends SkuInfoOrBuilder>
+  @java.lang.Override
+  public java.util.List<? extends com.example.wechatmerchant.skurpc.SkuInfoOrBuilder> 
       getDataOrBuilderList() {
     return data_;
   }
   /**
    * <code>repeated .sku.SkuInfo data = 2;</code>
    */
-  @Override
+  @java.lang.Override
   public int getDataCount() {
     return data_.size();
   }
   /**
    * <code>repeated .sku.SkuInfo data = 2;</code>
    */
-  @Override
-  public SkuInfo getData(int index) {
+  @java.lang.Override
+  public com.example.wechatmerchant.skurpc.SkuInfo getData(int index) {
     return data_.get(index);
   }
   /**
    * <code>repeated .sku.SkuInfo data = 2;</code>
    */
-  @Override
-  public SkuInfoOrBuilder getDataOrBuilder(
+  @java.lang.Override
+  public com.example.wechatmerchant.skurpc.SkuInfoOrBuilder getDataOrBuilder(
       int index) {
     return data_.get(index);
   }
 
   public static final int TOTAL_FIELD_NUMBER = 3;
-  private long total_;
+  private int total_;
   /**
-   * <code>uint64 total = 3;</code>
+   * <code>uint32 total = 3;</code>
    * @return The total.
    */
-  @Override
-  public long getTotal() {
+  @java.lang.Override
+  public int getTotal() {
     return total_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (common_ != null) {
@@ -209,13 +209,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < data_.size(); i++) {
       output.writeMessage(2, data_.get(i));
     }
-    if (total_ != 0L) {
-      output.writeUInt64(3, total_);
+    if (total_ != 0) {
+      output.writeUInt32(3, total_);
     }
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -229,24 +229,24 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, data_.get(i));
     }
-    if (total_ != 0L) {
+    if (total_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(3, total_);
+        .computeUInt32Size(3, total_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof SkuResp)) {
+    if (!(obj instanceof com.example.wechatmerchant.skurpc.SkuResp)) {
       return super.equals(obj);
     }
-    SkuResp other = (SkuResp) obj;
+    com.example.wechatmerchant.skurpc.SkuResp other = (com.example.wechatmerchant.skurpc.SkuResp) obj;
 
     if (hasCommon() != other.hasCommon()) return false;
     if (hasCommon()) {
@@ -261,7 +261,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -277,76 +277,75 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getDataList().hashCode();
     }
     hash = (37 * hash) + TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTotal());
+    hash = (53 * hash) + getTotal();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SkuResp parseFrom(byte[] data)
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SkuResp parseFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SkuResp parseDelimitedFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.SkuResp parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static SkuResp parseDelimitedFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SkuResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.SkuResp parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -354,23 +353,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(SkuResp prototype) {
+  public static Builder newBuilder(com.example.wechatmerchant.skurpc.SkuResp prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -380,18 +379,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:sku.SkuResp)
-      SkuRespOrBuilder {
+      com.example.wechatmerchant.skurpc.SkuRespOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Sku.internal_static_sku_SkuResp_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuResp_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Sku.internal_static_sku_SkuResp_fieldAccessorTable
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SkuResp.class, Builder.class);
+              com.example.wechatmerchant.skurpc.SkuResp.class, com.example.wechatmerchant.skurpc.SkuResp.Builder.class);
     }
 
     // Construct using com.example.wechatmerchant.skurpc.SkuResp.newBuilder()
@@ -400,7 +399,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -410,7 +409,7 @@ private static final long serialVersionUID = 0L;
         getDataFieldBuilder();
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (commonBuilder_ == null) {
@@ -425,34 +424,34 @@ private static final long serialVersionUID = 0L;
       } else {
         dataBuilder_.clear();
       }
-      total_ = 0L;
+      total_ = 0;
 
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Sku.internal_static_sku_SkuResp_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuResp_descriptor;
     }
 
-    @Override
-    public SkuResp getDefaultInstanceForType() {
-      return SkuResp.getDefaultInstance();
+    @java.lang.Override
+    public com.example.wechatmerchant.skurpc.SkuResp getDefaultInstanceForType() {
+      return com.example.wechatmerchant.skurpc.SkuResp.getDefaultInstance();
     }
 
-    @Override
-    public SkuResp build() {
-      SkuResp result = buildPartial();
+    @java.lang.Override
+    public com.example.wechatmerchant.skurpc.SkuResp build() {
+      com.example.wechatmerchant.skurpc.SkuResp result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public SkuResp buildPartial() {
-      SkuResp result = new SkuResp(this);
+    @java.lang.Override
+    public com.example.wechatmerchant.skurpc.SkuResp buildPartial() {
+      com.example.wechatmerchant.skurpc.SkuResp result = new com.example.wechatmerchant.skurpc.SkuResp(this);
       int from_bitField0_ = bitField0_;
       if (commonBuilder_ == null) {
         result.common_ = common_;
@@ -473,50 +472,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof SkuResp) {
-        return mergeFrom((SkuResp)other);
+      if (other instanceof com.example.wechatmerchant.skurpc.SkuResp) {
+        return mergeFrom((com.example.wechatmerchant.skurpc.SkuResp)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(SkuResp other) {
-      if (other == SkuResp.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.example.wechatmerchant.skurpc.SkuResp other) {
+      if (other == com.example.wechatmerchant.skurpc.SkuResp.getDefaultInstance()) return this;
       if (other.hasCommon()) {
         mergeCommon(other.getCommon());
       }
@@ -546,7 +545,7 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.getTotal() != 0L) {
+      if (other.getTotal() != 0) {
         setTotal(other.getTotal());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -554,21 +553,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      SkuResp parsedMessage = null;
+      com.example.wechatmerchant.skurpc.SkuResp parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (SkuResp) e.getUnfinishedMessage();
+        parsedMessage = (com.example.wechatmerchant.skurpc.SkuResp) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -579,9 +578,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private CommonRsp common_;
+    private com.example.wechatmerchant.skurpc.CommonRsp common_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        CommonRsp, CommonRsp.Builder, CommonRspOrBuilder> commonBuilder_;
+        com.example.wechatmerchant.skurpc.CommonRsp, com.example.wechatmerchant.skurpc.CommonRsp.Builder, com.example.wechatmerchant.skurpc.CommonRspOrBuilder> commonBuilder_;
     /**
      * <code>.sku.CommonRsp common = 1;</code>
      * @return Whether the common field is set.
@@ -593,9 +592,9 @@ private static final long serialVersionUID = 0L;
      * <code>.sku.CommonRsp common = 1;</code>
      * @return The common.
      */
-    public CommonRsp getCommon() {
+    public com.example.wechatmerchant.skurpc.CommonRsp getCommon() {
       if (commonBuilder_ == null) {
-        return common_ == null ? CommonRsp.getDefaultInstance() : common_;
+        return common_ == null ? com.example.wechatmerchant.skurpc.CommonRsp.getDefaultInstance() : common_;
       } else {
         return commonBuilder_.getMessage();
       }
@@ -603,7 +602,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.sku.CommonRsp common = 1;</code>
      */
-    public Builder setCommon(CommonRsp value) {
+    public Builder setCommon(com.example.wechatmerchant.skurpc.CommonRsp value) {
       if (commonBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -620,7 +619,7 @@ private static final long serialVersionUID = 0L;
      * <code>.sku.CommonRsp common = 1;</code>
      */
     public Builder setCommon(
-        CommonRsp.Builder builderForValue) {
+        com.example.wechatmerchant.skurpc.CommonRsp.Builder builderForValue) {
       if (commonBuilder_ == null) {
         common_ = builderForValue.build();
         onChanged();
@@ -633,11 +632,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.sku.CommonRsp common = 1;</code>
      */
-    public Builder mergeCommon(CommonRsp value) {
+    public Builder mergeCommon(com.example.wechatmerchant.skurpc.CommonRsp value) {
       if (commonBuilder_ == null) {
         if (common_ != null) {
           common_ =
-            CommonRsp.newBuilder(common_).mergeFrom(value).buildPartial();
+            com.example.wechatmerchant.skurpc.CommonRsp.newBuilder(common_).mergeFrom(value).buildPartial();
         } else {
           common_ = value;
         }
@@ -665,7 +664,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.sku.CommonRsp common = 1;</code>
      */
-    public CommonRsp.Builder getCommonBuilder() {
+    public com.example.wechatmerchant.skurpc.CommonRsp.Builder getCommonBuilder() {
       
       onChanged();
       return getCommonFieldBuilder().getBuilder();
@@ -673,23 +672,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.sku.CommonRsp common = 1;</code>
      */
-    public CommonRspOrBuilder getCommonOrBuilder() {
+    public com.example.wechatmerchant.skurpc.CommonRspOrBuilder getCommonOrBuilder() {
       if (commonBuilder_ != null) {
         return commonBuilder_.getMessageOrBuilder();
       } else {
         return common_ == null ?
-            CommonRsp.getDefaultInstance() : common_;
+            com.example.wechatmerchant.skurpc.CommonRsp.getDefaultInstance() : common_;
       }
     }
     /**
      * <code>.sku.CommonRsp common = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        CommonRsp, CommonRsp.Builder, CommonRspOrBuilder>
+        com.example.wechatmerchant.skurpc.CommonRsp, com.example.wechatmerchant.skurpc.CommonRsp.Builder, com.example.wechatmerchant.skurpc.CommonRspOrBuilder> 
         getCommonFieldBuilder() {
       if (commonBuilder_ == null) {
         commonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            CommonRsp, CommonRsp.Builder, CommonRspOrBuilder>(
+            com.example.wechatmerchant.skurpc.CommonRsp, com.example.wechatmerchant.skurpc.CommonRsp.Builder, com.example.wechatmerchant.skurpc.CommonRspOrBuilder>(
                 getCommon(),
                 getParentForChildren(),
                 isClean());
@@ -698,22 +697,22 @@ private static final long serialVersionUID = 0L;
       return commonBuilder_;
     }
 
-    private java.util.List<SkuInfo> data_ =
+    private java.util.List<com.example.wechatmerchant.skurpc.SkuInfo> data_ =
       java.util.Collections.emptyList();
     private void ensureDataIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        data_ = new java.util.ArrayList<SkuInfo>(data_);
+        data_ = new java.util.ArrayList<com.example.wechatmerchant.skurpc.SkuInfo>(data_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        SkuInfo, SkuInfo.Builder, SkuInfoOrBuilder> dataBuilder_;
+        com.example.wechatmerchant.skurpc.SkuInfo, com.example.wechatmerchant.skurpc.SkuInfo.Builder, com.example.wechatmerchant.skurpc.SkuInfoOrBuilder> dataBuilder_;
 
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public java.util.List<SkuInfo> getDataList() {
+    public java.util.List<com.example.wechatmerchant.skurpc.SkuInfo> getDataList() {
       if (dataBuilder_ == null) {
         return java.util.Collections.unmodifiableList(data_);
       } else {
@@ -733,7 +732,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public SkuInfo getData(int index) {
+    public com.example.wechatmerchant.skurpc.SkuInfo getData(int index) {
       if (dataBuilder_ == null) {
         return data_.get(index);
       } else {
@@ -744,7 +743,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
     public Builder setData(
-        int index, SkuInfo value) {
+        int index, com.example.wechatmerchant.skurpc.SkuInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -761,7 +760,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
     public Builder setData(
-        int index, SkuInfo.Builder builderForValue) {
+        int index, com.example.wechatmerchant.skurpc.SkuInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.set(index, builderForValue.build());
@@ -774,7 +773,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public Builder addData(SkuInfo value) {
+    public Builder addData(com.example.wechatmerchant.skurpc.SkuInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -791,7 +790,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
     public Builder addData(
-        int index, SkuInfo value) {
+        int index, com.example.wechatmerchant.skurpc.SkuInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -808,7 +807,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
     public Builder addData(
-        SkuInfo.Builder builderForValue) {
+        com.example.wechatmerchant.skurpc.SkuInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.add(builderForValue.build());
@@ -822,7 +821,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
     public Builder addData(
-        int index, SkuInfo.Builder builderForValue) {
+        int index, com.example.wechatmerchant.skurpc.SkuInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.add(index, builderForValue.build());
@@ -836,7 +835,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
     public Builder addAllData(
-        Iterable<? extends SkuInfo> values) {
+        java.lang.Iterable<? extends com.example.wechatmerchant.skurpc.SkuInfo> values) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -876,14 +875,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public SkuInfo.Builder getDataBuilder(
+    public com.example.wechatmerchant.skurpc.SkuInfo.Builder getDataBuilder(
         int index) {
       return getDataFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public SkuInfoOrBuilder getDataOrBuilder(
+    public com.example.wechatmerchant.skurpc.SkuInfoOrBuilder getDataOrBuilder(
         int index) {
       if (dataBuilder_ == null) {
         return data_.get(index);  } else {
@@ -893,7 +892,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public java.util.List<? extends SkuInfoOrBuilder>
+    public java.util.List<? extends com.example.wechatmerchant.skurpc.SkuInfoOrBuilder> 
          getDataOrBuilderList() {
       if (dataBuilder_ != null) {
         return dataBuilder_.getMessageOrBuilderList();
@@ -904,31 +903,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public SkuInfo.Builder addDataBuilder() {
+    public com.example.wechatmerchant.skurpc.SkuInfo.Builder addDataBuilder() {
       return getDataFieldBuilder().addBuilder(
-          SkuInfo.getDefaultInstance());
+          com.example.wechatmerchant.skurpc.SkuInfo.getDefaultInstance());
     }
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public SkuInfo.Builder addDataBuilder(
+    public com.example.wechatmerchant.skurpc.SkuInfo.Builder addDataBuilder(
         int index) {
       return getDataFieldBuilder().addBuilder(
-          index, SkuInfo.getDefaultInstance());
+          index, com.example.wechatmerchant.skurpc.SkuInfo.getDefaultInstance());
     }
     /**
      * <code>repeated .sku.SkuInfo data = 2;</code>
      */
-    public java.util.List<SkuInfo.Builder>
+    public java.util.List<com.example.wechatmerchant.skurpc.SkuInfo.Builder> 
          getDataBuilderList() {
       return getDataFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        SkuInfo, SkuInfo.Builder, SkuInfoOrBuilder>
+        com.example.wechatmerchant.skurpc.SkuInfo, com.example.wechatmerchant.skurpc.SkuInfo.Builder, com.example.wechatmerchant.skurpc.SkuInfoOrBuilder> 
         getDataFieldBuilder() {
       if (dataBuilder_ == null) {
         dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            SkuInfo, SkuInfo.Builder, SkuInfoOrBuilder>(
+            com.example.wechatmerchant.skurpc.SkuInfo, com.example.wechatmerchant.skurpc.SkuInfo.Builder, com.example.wechatmerchant.skurpc.SkuInfoOrBuilder>(
                 data_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -938,43 +937,43 @@ private static final long serialVersionUID = 0L;
       return dataBuilder_;
     }
 
-    private long total_ ;
+    private int total_ ;
     /**
-     * <code>uint64 total = 3;</code>
+     * <code>uint32 total = 3;</code>
      * @return The total.
      */
-    @Override
-    public long getTotal() {
+    @java.lang.Override
+    public int getTotal() {
       return total_;
     }
     /**
-     * <code>uint64 total = 3;</code>
+     * <code>uint32 total = 3;</code>
      * @param value The total to set.
      * @return This builder for chaining.
      */
-    public Builder setTotal(long value) {
+    public Builder setTotal(int value) {
       
       total_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint64 total = 3;</code>
+     * <code>uint32 total = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotal() {
       
-      total_ = 0L;
+      total_ = 0;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -985,18 +984,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:sku.SkuResp)
-  private static final SkuResp DEFAULT_INSTANCE;
+  private static final com.example.wechatmerchant.skurpc.SkuResp DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new SkuResp();
+    DEFAULT_INSTANCE = new com.example.wechatmerchant.skurpc.SkuResp();
   }
 
-  public static SkuResp getDefaultInstance() {
+  public static com.example.wechatmerchant.skurpc.SkuResp getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<SkuResp>
       PARSER = new com.google.protobuf.AbstractParser<SkuResp>() {
-    @Override
+    @java.lang.Override
     public SkuResp parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1009,13 +1008,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<SkuResp> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public SkuResp getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.example.wechatmerchant.skurpc.SkuResp getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

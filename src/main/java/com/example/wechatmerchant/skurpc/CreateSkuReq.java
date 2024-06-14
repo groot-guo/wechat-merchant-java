@@ -4,22 +4,25 @@
 package com.example.wechatmerchant.skurpc;
 
 /**
- * Protobuf type {@code sku.SkuInfo}
+ * <pre>
+ * 此处应该还要修改
+ * </pre>
+ *
+ * Protobuf type {@code sku.CreateSkuReq}
  */
-public final class SkuInfo extends
+public final class CreateSkuReq extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:sku.SkuInfo)
-    SkuInfoOrBuilder {
+    // @@protoc_insertion_point(message_implements:sku.CreateSkuReq)
+    CreateSkuReqOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SkuInfo.newBuilder() to construct.
-  private SkuInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateSkuReq.newBuilder() to construct.
+  private CreateSkuReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SkuInfo() {
-    skuId_ = "";
-    skuName_ = "";
-    skuImage_ = "";
-    itemName_ = "";
+  private CreateSkuReq() {
+    itemId_ = "";
+    itemNam_ = "";
+    productId_ = "";
     productName_ = "";
   }
 
@@ -27,7 +30,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SkuInfo();
+    return new CreateSkuReq();
   }
 
   @java.lang.Override
@@ -35,7 +38,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SkuInfo(
+  private CreateSkuReq(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -56,51 +59,30 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            skuId_ = s;
+            itemId_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            skuName_ = s;
+            itemNam_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            skuImage_ = s;
+            productId_ = s;
             break;
           }
-          case 32: {
-
-            itemId_ = input.readUInt32();
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            itemName_ = s;
-            break;
-          }
-          case 48: {
-
-            productId_ = input.readUInt32();
-            break;
-          }
-          case 58: {
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
             productName_ = s;
             break;
           }
-          case 64: {
+          case 40: {
 
-            ctime_ = input.readUInt32();
-            break;
-          }
-          case 72: {
-
-            mtime_ = input.readUInt32();
+            inventoryQty_ = input.readUInt32();
             break;
           }
           default: {
@@ -124,195 +106,135 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInfo_descriptor;
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateSkuReq_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInfo_fieldAccessorTable
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateSkuReq_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.wechatmerchant.skurpc.SkuInfo.class, com.example.wechatmerchant.skurpc.SkuInfo.Builder.class);
+            com.example.wechatmerchant.skurpc.CreateSkuReq.class, com.example.wechatmerchant.skurpc.CreateSkuReq.Builder.class);
   }
 
-  public static final int SKU_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object skuId_;
+  public static final int ITEM_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object itemId_;
   /**
-   * <code>string sku_id = 1;</code>
-   * @return The skuId.
-   */
-  @java.lang.Override
-  public java.lang.String getSkuId() {
-    java.lang.Object ref = skuId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      skuId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string sku_id = 1;</code>
-   * @return The bytes for skuId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSkuIdBytes() {
-    java.lang.Object ref = skuId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      skuId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SKU_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object skuName_;
-  /**
-   * <code>string sku_name = 2;</code>
-   * @return The skuName.
-   */
-  @java.lang.Override
-  public java.lang.String getSkuName() {
-    java.lang.Object ref = skuName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      skuName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string sku_name = 2;</code>
-   * @return The bytes for skuName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSkuNameBytes() {
-    java.lang.Object ref = skuName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      skuName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SKU_IMAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object skuImage_;
-  /**
-   * <code>string sku_image = 3;</code>
-   * @return The skuImage.
-   */
-  @java.lang.Override
-  public java.lang.String getSkuImage() {
-    java.lang.Object ref = skuImage_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      skuImage_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string sku_image = 3;</code>
-   * @return The bytes for skuImage.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSkuImageBytes() {
-    java.lang.Object ref = skuImage_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      skuImage_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ITEM_ID_FIELD_NUMBER = 4;
-  private int itemId_;
-  /**
-   * <code>uint32 item_id = 4;</code>
+   * <code>string item_id = 1;</code>
    * @return The itemId.
    */
   @java.lang.Override
-  public int getItemId() {
-    return itemId_;
-  }
-
-  public static final int ITEM_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object itemName_;
-  /**
-   * <code>string item_name = 5;</code>
-   * @return The itemName.
-   */
-  @java.lang.Override
-  public java.lang.String getItemName() {
-    java.lang.Object ref = itemName_;
+  public java.lang.String getItemId() {
+    java.lang.Object ref = itemId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      itemName_ = s;
+      itemId_ = s;
       return s;
     }
   }
   /**
-   * <code>string item_name = 5;</code>
-   * @return The bytes for itemName.
+   * <code>string item_id = 1;</code>
+   * @return The bytes for itemId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getItemNameBytes() {
-    java.lang.Object ref = itemName_;
+      getItemIdBytes() {
+    java.lang.Object ref = itemId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      itemName_ = b;
+      itemId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PRODUCT_ID_FIELD_NUMBER = 6;
-  private int productId_;
+  public static final int ITEM_NAM_FIELD_NUMBER = 2;
+  private volatile java.lang.Object itemNam_;
   /**
-   * <code>uint32 product_id = 6;</code>
+   * <code>string item_nam = 2;</code>
+   * @return The itemNam.
+   */
+  @java.lang.Override
+  public java.lang.String getItemNam() {
+    java.lang.Object ref = itemNam_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      itemNam_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string item_nam = 2;</code>
+   * @return The bytes for itemNam.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getItemNamBytes() {
+    java.lang.Object ref = itemNam_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      itemNam_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRODUCT_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object productId_;
+  /**
+   * <code>string product_id = 3;</code>
    * @return The productId.
    */
   @java.lang.Override
-  public int getProductId() {
-    return productId_;
+  public java.lang.String getProductId() {
+    java.lang.Object ref = productId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      productId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string product_id = 3;</code>
+   * @return The bytes for productId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProductIdBytes() {
+    java.lang.Object ref = productId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      productId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int PRODUCT_NAME_FIELD_NUMBER = 7;
+  public static final int PRODUCT_NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object productName_;
   /**
-   * <code>string product_name = 7;</code>
+   * <code>string product_name = 4;</code>
    * @return The productName.
    */
   @java.lang.Override
@@ -329,7 +251,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string product_name = 7;</code>
+   * <code>string product_name = 4;</code>
    * @return The bytes for productName.
    */
   @java.lang.Override
@@ -347,26 +269,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CTIME_FIELD_NUMBER = 8;
-  private int ctime_;
+  public static final int INVENTORY_QTY_FIELD_NUMBER = 5;
+  private int inventoryQty_;
   /**
-   * <code>uint32 ctime = 8;</code>
-   * @return The ctime.
+   * <code>uint32 inventory_qty = 5;</code>
+   * @return The inventoryQty.
    */
   @java.lang.Override
-  public int getCtime() {
-    return ctime_;
-  }
-
-  public static final int MTIME_FIELD_NUMBER = 9;
-  private int mtime_;
-  /**
-   * <code>uint32 mtime = 9;</code>
-   * @return The mtime.
-   */
-  @java.lang.Override
-  public int getMtime() {
-    return mtime_;
+  public int getInventoryQty() {
+    return inventoryQty_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,32 +294,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, skuId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, itemId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, skuName_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemNam_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, itemNam_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuImage_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, skuImage_);
-    }
-    if (itemId_ != 0) {
-      output.writeUInt32(4, itemId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, itemName_);
-    }
-    if (productId_ != 0) {
-      output.writeUInt32(6, productId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, productName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, productName_);
     }
-    if (ctime_ != 0) {
-      output.writeUInt32(8, ctime_);
-    }
-    if (mtime_ != 0) {
-      output.writeUInt32(9, mtime_);
+    if (inventoryQty_ != 0) {
+      output.writeUInt32(5, inventoryQty_);
     }
     unknownFields.writeTo(output);
   }
@@ -419,36 +318,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, skuId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, itemId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, skuName_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemNam_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, itemNam_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skuImage_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, skuImage_);
-    }
-    if (itemId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(4, itemId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, itemName_);
-    }
-    if (productId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(6, productId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, productName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, productName_);
     }
-    if (ctime_ != 0) {
+    if (inventoryQty_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(8, ctime_);
-    }
-    if (mtime_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(9, mtime_);
+        .computeUInt32Size(5, inventoryQty_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -460,29 +344,21 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.wechatmerchant.skurpc.SkuInfo)) {
+    if (!(obj instanceof com.example.wechatmerchant.skurpc.CreateSkuReq)) {
       return super.equals(obj);
     }
-    com.example.wechatmerchant.skurpc.SkuInfo other = (com.example.wechatmerchant.skurpc.SkuInfo) obj;
+    com.example.wechatmerchant.skurpc.CreateSkuReq other = (com.example.wechatmerchant.skurpc.CreateSkuReq) obj;
 
-    if (!getSkuId()
-        .equals(other.getSkuId())) return false;
-    if (!getSkuName()
-        .equals(other.getSkuName())) return false;
-    if (!getSkuImage()
-        .equals(other.getSkuImage())) return false;
-    if (getItemId()
-        != other.getItemId()) return false;
-    if (!getItemName()
-        .equals(other.getItemName())) return false;
-    if (getProductId()
-        != other.getProductId()) return false;
+    if (!getItemId()
+        .equals(other.getItemId())) return false;
+    if (!getItemNam()
+        .equals(other.getItemNam())) return false;
+    if (!getProductId()
+        .equals(other.getProductId())) return false;
     if (!getProductName()
         .equals(other.getProductName())) return false;
-    if (getCtime()
-        != other.getCtime()) return false;
-    if (getMtime()
-        != other.getMtime()) return false;
+    if (getInventoryQty()
+        != other.getInventoryQty()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -494,92 +370,84 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SKU_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getSkuId().hashCode();
-    hash = (37 * hash) + SKU_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getSkuName().hashCode();
-    hash = (37 * hash) + SKU_IMAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getSkuImage().hashCode();
     hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getItemId();
-    hash = (37 * hash) + ITEM_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getItemName().hashCode();
+    hash = (53 * hash) + getItemId().hashCode();
+    hash = (37 * hash) + ITEM_NAM_FIELD_NUMBER;
+    hash = (53 * hash) + getItemNam().hashCode();
     hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getProductId();
+    hash = (53 * hash) + getProductId().hashCode();
     hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getProductName().hashCode();
-    hash = (37 * hash) + CTIME_FIELD_NUMBER;
-    hash = (53 * hash) + getCtime();
-    hash = (37 * hash) + MTIME_FIELD_NUMBER;
-    hash = (53 * hash) + getMtime();
+    hash = (37 * hash) + INVENTORY_QTY_FIELD_NUMBER;
+    hash = (53 * hash) + getInventoryQty();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(byte[] data)
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseDelimitedFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseDelimitedFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInfo parseFrom(
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -592,7 +460,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.wechatmerchant.skurpc.SkuInfo prototype) {
+  public static Builder newBuilder(com.example.wechatmerchant.skurpc.CreateSkuReq prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -608,26 +476,30 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code sku.SkuInfo}
+   * <pre>
+   * 此处应该还要修改
+   * </pre>
+   *
+   * Protobuf type {@code sku.CreateSkuReq}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:sku.SkuInfo)
-      com.example.wechatmerchant.skurpc.SkuInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:sku.CreateSkuReq)
+      com.example.wechatmerchant.skurpc.CreateSkuReqOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInfo_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateSkuReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInfo_fieldAccessorTable
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateSkuReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.wechatmerchant.skurpc.SkuInfo.class, com.example.wechatmerchant.skurpc.SkuInfo.Builder.class);
+              com.example.wechatmerchant.skurpc.CreateSkuReq.class, com.example.wechatmerchant.skurpc.CreateSkuReq.Builder.class);
     }
 
-    // Construct using com.example.wechatmerchant.skurpc.SkuInfo.newBuilder()
+    // Construct using com.example.wechatmerchant.skurpc.CreateSkuReq.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -645,23 +517,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      skuId_ = "";
+      itemId_ = "";
 
-      skuName_ = "";
+      itemNam_ = "";
 
-      skuImage_ = "";
-
-      itemId_ = 0;
-
-      itemName_ = "";
-
-      productId_ = 0;
+      productId_ = "";
 
       productName_ = "";
 
-      ctime_ = 0;
-
-      mtime_ = 0;
+      inventoryQty_ = 0;
 
       return this;
     }
@@ -669,17 +533,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInfo_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_CreateSkuReq_descriptor;
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.SkuInfo getDefaultInstanceForType() {
-      return com.example.wechatmerchant.skurpc.SkuInfo.getDefaultInstance();
+    public com.example.wechatmerchant.skurpc.CreateSkuReq getDefaultInstanceForType() {
+      return com.example.wechatmerchant.skurpc.CreateSkuReq.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.SkuInfo build() {
-      com.example.wechatmerchant.skurpc.SkuInfo result = buildPartial();
+    public com.example.wechatmerchant.skurpc.CreateSkuReq build() {
+      com.example.wechatmerchant.skurpc.CreateSkuReq result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -687,17 +551,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.SkuInfo buildPartial() {
-      com.example.wechatmerchant.skurpc.SkuInfo result = new com.example.wechatmerchant.skurpc.SkuInfo(this);
-      result.skuId_ = skuId_;
-      result.skuName_ = skuName_;
-      result.skuImage_ = skuImage_;
+    public com.example.wechatmerchant.skurpc.CreateSkuReq buildPartial() {
+      com.example.wechatmerchant.skurpc.CreateSkuReq result = new com.example.wechatmerchant.skurpc.CreateSkuReq(this);
       result.itemId_ = itemId_;
-      result.itemName_ = itemName_;
+      result.itemNam_ = itemNam_;
       result.productId_ = productId_;
       result.productName_ = productName_;
-      result.ctime_ = ctime_;
-      result.mtime_ = mtime_;
+      result.inventoryQty_ = inventoryQty_;
       onBuilt();
       return result;
     }
@@ -736,47 +596,34 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.wechatmerchant.skurpc.SkuInfo) {
-        return mergeFrom((com.example.wechatmerchant.skurpc.SkuInfo)other);
+      if (other instanceof com.example.wechatmerchant.skurpc.CreateSkuReq) {
+        return mergeFrom((com.example.wechatmerchant.skurpc.CreateSkuReq)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.wechatmerchant.skurpc.SkuInfo other) {
-      if (other == com.example.wechatmerchant.skurpc.SkuInfo.getDefaultInstance()) return this;
-      if (!other.getSkuId().isEmpty()) {
-        skuId_ = other.skuId_;
+    public Builder mergeFrom(com.example.wechatmerchant.skurpc.CreateSkuReq other) {
+      if (other == com.example.wechatmerchant.skurpc.CreateSkuReq.getDefaultInstance()) return this;
+      if (!other.getItemId().isEmpty()) {
+        itemId_ = other.itemId_;
         onChanged();
       }
-      if (!other.getSkuName().isEmpty()) {
-        skuName_ = other.skuName_;
+      if (!other.getItemNam().isEmpty()) {
+        itemNam_ = other.itemNam_;
         onChanged();
       }
-      if (!other.getSkuImage().isEmpty()) {
-        skuImage_ = other.skuImage_;
+      if (!other.getProductId().isEmpty()) {
+        productId_ = other.productId_;
         onChanged();
-      }
-      if (other.getItemId() != 0) {
-        setItemId(other.getItemId());
-      }
-      if (!other.getItemName().isEmpty()) {
-        itemName_ = other.itemName_;
-        onChanged();
-      }
-      if (other.getProductId() != 0) {
-        setProductId(other.getProductId());
       }
       if (!other.getProductName().isEmpty()) {
         productName_ = other.productName_;
         onChanged();
       }
-      if (other.getCtime() != 0) {
-        setCtime(other.getCtime());
-      }
-      if (other.getMtime() != 0) {
-        setMtime(other.getMtime());
+      if (other.getInventoryQty() != 0) {
+        setInventoryQty(other.getInventoryQty());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -793,11 +640,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.wechatmerchant.skurpc.SkuInfo parsedMessage = null;
+      com.example.wechatmerchant.skurpc.CreateSkuReq parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.wechatmerchant.skurpc.SkuInfo) e.getUnfinishedMessage();
+        parsedMessage = (com.example.wechatmerchant.skurpc.CreateSkuReq) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -807,375 +654,237 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object skuId_ = "";
+    private java.lang.Object itemId_ = "";
     /**
-     * <code>string sku_id = 1;</code>
-     * @return The skuId.
-     */
-    public java.lang.String getSkuId() {
-      java.lang.Object ref = skuId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        skuId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string sku_id = 1;</code>
-     * @return The bytes for skuId.
-     */
-    public com.google.protobuf.ByteString
-        getSkuIdBytes() {
-      java.lang.Object ref = skuId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        skuId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string sku_id = 1;</code>
-     * @param value The skuId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSkuId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      skuId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string sku_id = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSkuId() {
-      
-      skuId_ = getDefaultInstance().getSkuId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string sku_id = 1;</code>
-     * @param value The bytes for skuId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSkuIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      skuId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object skuName_ = "";
-    /**
-     * <code>string sku_name = 2;</code>
-     * @return The skuName.
-     */
-    public java.lang.String getSkuName() {
-      java.lang.Object ref = skuName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        skuName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string sku_name = 2;</code>
-     * @return The bytes for skuName.
-     */
-    public com.google.protobuf.ByteString
-        getSkuNameBytes() {
-      java.lang.Object ref = skuName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        skuName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string sku_name = 2;</code>
-     * @param value The skuName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSkuName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      skuName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string sku_name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSkuName() {
-      
-      skuName_ = getDefaultInstance().getSkuName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string sku_name = 2;</code>
-     * @param value The bytes for skuName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSkuNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      skuName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object skuImage_ = "";
-    /**
-     * <code>string sku_image = 3;</code>
-     * @return The skuImage.
-     */
-    public java.lang.String getSkuImage() {
-      java.lang.Object ref = skuImage_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        skuImage_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string sku_image = 3;</code>
-     * @return The bytes for skuImage.
-     */
-    public com.google.protobuf.ByteString
-        getSkuImageBytes() {
-      java.lang.Object ref = skuImage_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        skuImage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string sku_image = 3;</code>
-     * @param value The skuImage to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSkuImage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      skuImage_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string sku_image = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSkuImage() {
-      
-      skuImage_ = getDefaultInstance().getSkuImage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string sku_image = 3;</code>
-     * @param value The bytes for skuImage to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSkuImageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      skuImage_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int itemId_ ;
-    /**
-     * <code>uint32 item_id = 4;</code>
+     * <code>string item_id = 1;</code>
      * @return The itemId.
      */
-    @java.lang.Override
-    public int getItemId() {
-      return itemId_;
+    public java.lang.String getItemId() {
+      java.lang.Object ref = itemId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        itemId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>uint32 item_id = 4;</code>
+     * <code>string item_id = 1;</code>
+     * @return The bytes for itemId.
+     */
+    public com.google.protobuf.ByteString
+        getItemIdBytes() {
+      java.lang.Object ref = itemId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        itemId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string item_id = 1;</code>
      * @param value The itemId to set.
      * @return This builder for chaining.
      */
-    public Builder setItemId(int value) {
-      
+    public Builder setItemId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       itemId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 item_id = 4;</code>
+     * <code>string item_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearItemId() {
       
-      itemId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object itemName_ = "";
-    /**
-     * <code>string item_name = 5;</code>
-     * @return The itemName.
-     */
-    public java.lang.String getItemName() {
-      java.lang.Object ref = itemName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        itemName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string item_name = 5;</code>
-     * @return The bytes for itemName.
-     */
-    public com.google.protobuf.ByteString
-        getItemNameBytes() {
-      java.lang.Object ref = itemName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        itemName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string item_name = 5;</code>
-     * @param value The itemName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setItemName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      itemName_ = value;
+      itemId_ = getDefaultInstance().getItemId();
       onChanged();
       return this;
     }
     /**
-     * <code>string item_name = 5;</code>
+     * <code>string item_id = 1;</code>
+     * @param value The bytes for itemId to set.
      * @return This builder for chaining.
      */
-    public Builder clearItemName() {
-      
-      itemName_ = getDefaultInstance().getItemName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string item_name = 5;</code>
-     * @param value The bytes for itemName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setItemNameBytes(
+    public Builder setItemIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      itemName_ = value;
+      itemId_ = value;
       onChanged();
       return this;
     }
 
-    private int productId_ ;
+    private java.lang.Object itemNam_ = "";
     /**
-     * <code>uint32 product_id = 6;</code>
-     * @return The productId.
+     * <code>string item_nam = 2;</code>
+     * @return The itemNam.
      */
-    @java.lang.Override
-    public int getProductId() {
-      return productId_;
+    public java.lang.String getItemNam() {
+      java.lang.Object ref = itemNam_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        itemNam_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>uint32 product_id = 6;</code>
+     * <code>string item_nam = 2;</code>
+     * @return The bytes for itemNam.
+     */
+    public com.google.protobuf.ByteString
+        getItemNamBytes() {
+      java.lang.Object ref = itemNam_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        itemNam_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string item_nam = 2;</code>
+     * @param value The itemNam to set.
+     * @return This builder for chaining.
+     */
+    public Builder setItemNam(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      itemNam_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string item_nam = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearItemNam() {
+      
+      itemNam_ = getDefaultInstance().getItemNam();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string item_nam = 2;</code>
+     * @param value The bytes for itemNam to set.
+     * @return This builder for chaining.
+     */
+    public Builder setItemNamBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      itemNam_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object productId_ = "";
+    /**
+     * <code>string product_id = 3;</code>
+     * @return The productId.
+     */
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string product_id = 3;</code>
+     * @return The bytes for productId.
+     */
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string product_id = 3;</code>
      * @param value The productId to set.
      * @return This builder for chaining.
      */
-    public Builder setProductId(int value) {
-      
+    public Builder setProductId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       productId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 product_id = 6;</code>
+     * <code>string product_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductId() {
       
-      productId_ = 0;
+      productId_ = getDefaultInstance().getProductId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string product_id = 3;</code>
+     * @param value The bytes for productId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      productId_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object productName_ = "";
     /**
-     * <code>string product_name = 7;</code>
+     * <code>string product_name = 4;</code>
      * @return The productName.
      */
     public java.lang.String getProductName() {
@@ -1191,7 +900,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 7;</code>
+     * <code>string product_name = 4;</code>
      * @return The bytes for productName.
      */
     public com.google.protobuf.ByteString
@@ -1208,7 +917,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 7;</code>
+     * <code>string product_name = 4;</code>
      * @param value The productName to set.
      * @return This builder for chaining.
      */
@@ -1223,7 +932,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 7;</code>
+     * <code>string product_name = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductName() {
@@ -1233,7 +942,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 7;</code>
+     * <code>string product_name = 4;</code>
      * @param value The bytes for productName to set.
      * @return This builder for chaining.
      */
@@ -1249,64 +958,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int ctime_ ;
+    private int inventoryQty_ ;
     /**
-     * <code>uint32 ctime = 8;</code>
-     * @return The ctime.
+     * <code>uint32 inventory_qty = 5;</code>
+     * @return The inventoryQty.
      */
     @java.lang.Override
-    public int getCtime() {
-      return ctime_;
+    public int getInventoryQty() {
+      return inventoryQty_;
     }
     /**
-     * <code>uint32 ctime = 8;</code>
-     * @param value The ctime to set.
+     * <code>uint32 inventory_qty = 5;</code>
+     * @param value The inventoryQty to set.
      * @return This builder for chaining.
      */
-    public Builder setCtime(int value) {
+    public Builder setInventoryQty(int value) {
       
-      ctime_ = value;
+      inventoryQty_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 ctime = 8;</code>
+     * <code>uint32 inventory_qty = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCtime() {
+    public Builder clearInventoryQty() {
       
-      ctime_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int mtime_ ;
-    /**
-     * <code>uint32 mtime = 9;</code>
-     * @return The mtime.
-     */
-    @java.lang.Override
-    public int getMtime() {
-      return mtime_;
-    }
-    /**
-     * <code>uint32 mtime = 9;</code>
-     * @param value The mtime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMtime(int value) {
-      
-      mtime_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint32 mtime = 9;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMtime() {
-      
-      mtime_ = 0;
+      inventoryQty_ = 0;
       onChanged();
       return this;
     }
@@ -1323,41 +1001,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:sku.SkuInfo)
+    // @@protoc_insertion_point(builder_scope:sku.CreateSkuReq)
   }
 
-  // @@protoc_insertion_point(class_scope:sku.SkuInfo)
-  private static final com.example.wechatmerchant.skurpc.SkuInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:sku.CreateSkuReq)
+  private static final com.example.wechatmerchant.skurpc.CreateSkuReq DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.wechatmerchant.skurpc.SkuInfo();
+    DEFAULT_INSTANCE = new com.example.wechatmerchant.skurpc.CreateSkuReq();
   }
 
-  public static com.example.wechatmerchant.skurpc.SkuInfo getDefaultInstance() {
+  public static com.example.wechatmerchant.skurpc.CreateSkuReq getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SkuInfo>
-      PARSER = new com.google.protobuf.AbstractParser<SkuInfo>() {
+  private static final com.google.protobuf.Parser<CreateSkuReq>
+      PARSER = new com.google.protobuf.AbstractParser<CreateSkuReq>() {
     @java.lang.Override
-    public SkuInfo parsePartialFrom(
+    public CreateSkuReq parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SkuInfo(input, extensionRegistry);
+      return new CreateSkuReq(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SkuInfo> parser() {
+  public static com.google.protobuf.Parser<CreateSkuReq> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SkuInfo> getParserForType() {
+  public com.google.protobuf.Parser<CreateSkuReq> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.example.wechatmerchant.skurpc.SkuInfo getDefaultInstanceForType() {
+  public com.example.wechatmerchant.skurpc.CreateSkuReq getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

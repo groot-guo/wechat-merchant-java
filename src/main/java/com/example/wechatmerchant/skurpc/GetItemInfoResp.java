@@ -4,18 +4,18 @@
 package com.example.wechatmerchant.skurpc;
 
 /**
- * Protobuf type {@code sku.SkuInventoryResp}
+ * Protobuf type {@code sku.GetItemInfoResp}
  */
-public final class SkuInventoryResp extends
+public final class GetItemInfoResp extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:sku.SkuInventoryResp)
-    SkuInventoryRespOrBuilder {
+    // @@protoc_insertion_point(message_implements:sku.GetItemInfoResp)
+    GetItemInfoRespOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SkuInventoryResp.newBuilder() to construct.
-  private SkuInventoryResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetItemInfoResp.newBuilder() to construct.
+  private GetItemInfoResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SkuInventoryResp() {
+  private GetItemInfoResp() {
     data_ = java.util.Collections.emptyList();
   }
 
@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SkuInventoryResp();
+    return new GetItemInfoResp();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SkuInventoryResp(
+  private GetItemInfoResp(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,11 +65,16 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              data_ = new java.util.ArrayList<com.example.wechatmerchant.skurpc.SkuInventoryInfo>();
+              data_ = new java.util.ArrayList<com.example.wechatmerchant.skurpc.ItemInfo>();
               mutable_bitField0_ |= 0x00000001;
             }
             data_.add(
-                input.readMessage(com.example.wechatmerchant.skurpc.SkuInventoryInfo.parser(), extensionRegistry));
+                input.readMessage(com.example.wechatmerchant.skurpc.ItemInfo.parser(), extensionRegistry));
+            break;
+          }
+          case 24: {
+
+            total_ = input.readUInt32();
             break;
           }
           default: {
@@ -96,15 +101,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInventoryResp_descriptor;
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_GetItemInfoResp_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInventoryResp_fieldAccessorTable
+    return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_GetItemInfoResp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.wechatmerchant.skurpc.SkuInventoryResp.class, com.example.wechatmerchant.skurpc.SkuInventoryResp.Builder.class);
+            com.example.wechatmerchant.skurpc.GetItemInfoResp.class, com.example.wechatmerchant.skurpc.GetItemInfoResp.Builder.class);
   }
 
   public static final int COMMON_FIELD_NUMBER = 1;
@@ -134,43 +139,54 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-  private java.util.List<com.example.wechatmerchant.skurpc.SkuInventoryInfo> data_;
+  private java.util.List<com.example.wechatmerchant.skurpc.ItemInfo> data_;
   /**
-   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.example.wechatmerchant.skurpc.SkuInventoryInfo> getDataList() {
+  public java.util.List<com.example.wechatmerchant.skurpc.ItemInfo> getDataList() {
     return data_;
   }
   /**
-   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder> 
+  public java.util.List<? extends com.example.wechatmerchant.skurpc.ItemInfoOrBuilder> 
       getDataOrBuilderList() {
     return data_;
   }
   /**
-   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
   @java.lang.Override
   public int getDataCount() {
     return data_.size();
   }
   /**
-   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
   @java.lang.Override
-  public com.example.wechatmerchant.skurpc.SkuInventoryInfo getData(int index) {
+  public com.example.wechatmerchant.skurpc.ItemInfo getData(int index) {
     return data_.get(index);
   }
   /**
-   * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+   * <code>repeated .sku.ItemInfo data = 2;</code>
    */
   @java.lang.Override
-  public com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder getDataOrBuilder(
+  public com.example.wechatmerchant.skurpc.ItemInfoOrBuilder getDataOrBuilder(
       int index) {
     return data_.get(index);
+  }
+
+  public static final int TOTAL_FIELD_NUMBER = 3;
+  private int total_;
+  /**
+   * <code>uint32 total = 3;</code>
+   * @return The total.
+   */
+  @java.lang.Override
+  public int getTotal() {
+    return total_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -193,6 +209,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < data_.size(); i++) {
       output.writeMessage(2, data_.get(i));
     }
+    if (total_ != 0) {
+      output.writeUInt32(3, total_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +229,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, data_.get(i));
     }
+    if (total_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(3, total_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -220,10 +243,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.wechatmerchant.skurpc.SkuInventoryResp)) {
+    if (!(obj instanceof com.example.wechatmerchant.skurpc.GetItemInfoResp)) {
       return super.equals(obj);
     }
-    com.example.wechatmerchant.skurpc.SkuInventoryResp other = (com.example.wechatmerchant.skurpc.SkuInventoryResp) obj;
+    com.example.wechatmerchant.skurpc.GetItemInfoResp other = (com.example.wechatmerchant.skurpc.GetItemInfoResp) obj;
 
     if (hasCommon() != other.hasCommon()) return false;
     if (hasCommon()) {
@@ -232,6 +255,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDataList()
         .equals(other.getDataList())) return false;
+    if (getTotal()
+        != other.getTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,74 +276,76 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getDataList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + getTotal();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(byte[] data)
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseDelimitedFrom(java.io.InputStream input)
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseDelimitedFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp parseFrom(
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -331,7 +358,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.wechatmerchant.skurpc.SkuInventoryResp prototype) {
+  public static Builder newBuilder(com.example.wechatmerchant.skurpc.GetItemInfoResp prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -347,26 +374,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code sku.SkuInventoryResp}
+   * Protobuf type {@code sku.GetItemInfoResp}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:sku.SkuInventoryResp)
-      com.example.wechatmerchant.skurpc.SkuInventoryRespOrBuilder {
+      // @@protoc_insertion_point(builder_implements:sku.GetItemInfoResp)
+      com.example.wechatmerchant.skurpc.GetItemInfoRespOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInventoryResp_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_GetItemInfoResp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInventoryResp_fieldAccessorTable
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_GetItemInfoResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.wechatmerchant.skurpc.SkuInventoryResp.class, com.example.wechatmerchant.skurpc.SkuInventoryResp.Builder.class);
+              com.example.wechatmerchant.skurpc.GetItemInfoResp.class, com.example.wechatmerchant.skurpc.GetItemInfoResp.Builder.class);
     }
 
-    // Construct using com.example.wechatmerchant.skurpc.SkuInventoryResp.newBuilder()
+    // Construct using com.example.wechatmerchant.skurpc.GetItemInfoResp.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -397,23 +424,25 @@ private static final long serialVersionUID = 0L;
       } else {
         dataBuilder_.clear();
       }
+      total_ = 0;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_SkuInventoryResp_descriptor;
+      return com.example.wechatmerchant.skurpc.Sku.internal_static_sku_GetItemInfoResp_descriptor;
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.SkuInventoryResp getDefaultInstanceForType() {
-      return com.example.wechatmerchant.skurpc.SkuInventoryResp.getDefaultInstance();
+    public com.example.wechatmerchant.skurpc.GetItemInfoResp getDefaultInstanceForType() {
+      return com.example.wechatmerchant.skurpc.GetItemInfoResp.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.SkuInventoryResp build() {
-      com.example.wechatmerchant.skurpc.SkuInventoryResp result = buildPartial();
+    public com.example.wechatmerchant.skurpc.GetItemInfoResp build() {
+      com.example.wechatmerchant.skurpc.GetItemInfoResp result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -421,8 +450,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.example.wechatmerchant.skurpc.SkuInventoryResp buildPartial() {
-      com.example.wechatmerchant.skurpc.SkuInventoryResp result = new com.example.wechatmerchant.skurpc.SkuInventoryResp(this);
+    public com.example.wechatmerchant.skurpc.GetItemInfoResp buildPartial() {
+      com.example.wechatmerchant.skurpc.GetItemInfoResp result = new com.example.wechatmerchant.skurpc.GetItemInfoResp(this);
       int from_bitField0_ = bitField0_;
       if (commonBuilder_ == null) {
         result.common_ = common_;
@@ -438,6 +467,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.data_ = dataBuilder_.build();
       }
+      result.total_ = total_;
       onBuilt();
       return result;
     }
@@ -476,16 +506,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.wechatmerchant.skurpc.SkuInventoryResp) {
-        return mergeFrom((com.example.wechatmerchant.skurpc.SkuInventoryResp)other);
+      if (other instanceof com.example.wechatmerchant.skurpc.GetItemInfoResp) {
+        return mergeFrom((com.example.wechatmerchant.skurpc.GetItemInfoResp)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.wechatmerchant.skurpc.SkuInventoryResp other) {
-      if (other == com.example.wechatmerchant.skurpc.SkuInventoryResp.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.example.wechatmerchant.skurpc.GetItemInfoResp other) {
+      if (other == com.example.wechatmerchant.skurpc.GetItemInfoResp.getDefaultInstance()) return this;
       if (other.hasCommon()) {
         mergeCommon(other.getCommon());
       }
@@ -515,6 +545,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.getTotal() != 0) {
+        setTotal(other.getTotal());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -530,11 +563,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.wechatmerchant.skurpc.SkuInventoryResp parsedMessage = null;
+      com.example.wechatmerchant.skurpc.GetItemInfoResp parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.wechatmerchant.skurpc.SkuInventoryResp) e.getUnfinishedMessage();
+        parsedMessage = (com.example.wechatmerchant.skurpc.GetItemInfoResp) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -664,22 +697,22 @@ private static final long serialVersionUID = 0L;
       return commonBuilder_;
     }
 
-    private java.util.List<com.example.wechatmerchant.skurpc.SkuInventoryInfo> data_ =
+    private java.util.List<com.example.wechatmerchant.skurpc.ItemInfo> data_ =
       java.util.Collections.emptyList();
     private void ensureDataIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        data_ = new java.util.ArrayList<com.example.wechatmerchant.skurpc.SkuInventoryInfo>(data_);
+        data_ = new java.util.ArrayList<com.example.wechatmerchant.skurpc.ItemInfo>(data_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.example.wechatmerchant.skurpc.SkuInventoryInfo, com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder, com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder> dataBuilder_;
+        com.example.wechatmerchant.skurpc.ItemInfo, com.example.wechatmerchant.skurpc.ItemInfo.Builder, com.example.wechatmerchant.skurpc.ItemInfoOrBuilder> dataBuilder_;
 
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public java.util.List<com.example.wechatmerchant.skurpc.SkuInventoryInfo> getDataList() {
+    public java.util.List<com.example.wechatmerchant.skurpc.ItemInfo> getDataList() {
       if (dataBuilder_ == null) {
         return java.util.Collections.unmodifiableList(data_);
       } else {
@@ -687,7 +720,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public int getDataCount() {
       if (dataBuilder_ == null) {
@@ -697,9 +730,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public com.example.wechatmerchant.skurpc.SkuInventoryInfo getData(int index) {
+    public com.example.wechatmerchant.skurpc.ItemInfo getData(int index) {
       if (dataBuilder_ == null) {
         return data_.get(index);
       } else {
@@ -707,10 +740,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder setData(
-        int index, com.example.wechatmerchant.skurpc.SkuInventoryInfo value) {
+        int index, com.example.wechatmerchant.skurpc.ItemInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -724,10 +757,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder setData(
-        int index, com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder builderForValue) {
+        int index, com.example.wechatmerchant.skurpc.ItemInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.set(index, builderForValue.build());
@@ -738,9 +771,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public Builder addData(com.example.wechatmerchant.skurpc.SkuInventoryInfo value) {
+    public Builder addData(com.example.wechatmerchant.skurpc.ItemInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -754,10 +787,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder addData(
-        int index, com.example.wechatmerchant.skurpc.SkuInventoryInfo value) {
+        int index, com.example.wechatmerchant.skurpc.ItemInfo value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -771,10 +804,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder addData(
-        com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder builderForValue) {
+        com.example.wechatmerchant.skurpc.ItemInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.add(builderForValue.build());
@@ -785,10 +818,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder addData(
-        int index, com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder builderForValue) {
+        int index, com.example.wechatmerchant.skurpc.ItemInfo.Builder builderForValue) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         data_.add(index, builderForValue.build());
@@ -799,10 +832,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder addAllData(
-        java.lang.Iterable<? extends com.example.wechatmerchant.skurpc.SkuInventoryInfo> values) {
+        java.lang.Iterable<? extends com.example.wechatmerchant.skurpc.ItemInfo> values) {
       if (dataBuilder_ == null) {
         ensureDataIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -814,7 +847,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder clearData() {
       if (dataBuilder_ == null) {
@@ -827,7 +860,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
     public Builder removeData(int index) {
       if (dataBuilder_ == null) {
@@ -840,16 +873,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder getDataBuilder(
+    public com.example.wechatmerchant.skurpc.ItemInfo.Builder getDataBuilder(
         int index) {
       return getDataFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder getDataOrBuilder(
+    public com.example.wechatmerchant.skurpc.ItemInfoOrBuilder getDataOrBuilder(
         int index) {
       if (dataBuilder_ == null) {
         return data_.get(index);  } else {
@@ -857,9 +890,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public java.util.List<? extends com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder> 
+    public java.util.List<? extends com.example.wechatmerchant.skurpc.ItemInfoOrBuilder> 
          getDataOrBuilderList() {
       if (dataBuilder_ != null) {
         return dataBuilder_.getMessageOrBuilderList();
@@ -868,33 +901,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder addDataBuilder() {
+    public com.example.wechatmerchant.skurpc.ItemInfo.Builder addDataBuilder() {
       return getDataFieldBuilder().addBuilder(
-          com.example.wechatmerchant.skurpc.SkuInventoryInfo.getDefaultInstance());
+          com.example.wechatmerchant.skurpc.ItemInfo.getDefaultInstance());
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder addDataBuilder(
+    public com.example.wechatmerchant.skurpc.ItemInfo.Builder addDataBuilder(
         int index) {
       return getDataFieldBuilder().addBuilder(
-          index, com.example.wechatmerchant.skurpc.SkuInventoryInfo.getDefaultInstance());
+          index, com.example.wechatmerchant.skurpc.ItemInfo.getDefaultInstance());
     }
     /**
-     * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
+     * <code>repeated .sku.ItemInfo data = 2;</code>
      */
-    public java.util.List<com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder> 
+    public java.util.List<com.example.wechatmerchant.skurpc.ItemInfo.Builder> 
          getDataBuilderList() {
       return getDataFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.example.wechatmerchant.skurpc.SkuInventoryInfo, com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder, com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder> 
+        com.example.wechatmerchant.skurpc.ItemInfo, com.example.wechatmerchant.skurpc.ItemInfo.Builder, com.example.wechatmerchant.skurpc.ItemInfoOrBuilder> 
         getDataFieldBuilder() {
       if (dataBuilder_ == null) {
         dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.example.wechatmerchant.skurpc.SkuInventoryInfo, com.example.wechatmerchant.skurpc.SkuInventoryInfo.Builder, com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder>(
+            com.example.wechatmerchant.skurpc.ItemInfo, com.example.wechatmerchant.skurpc.ItemInfo.Builder, com.example.wechatmerchant.skurpc.ItemInfoOrBuilder>(
                 data_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -902,6 +935,37 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
+    }
+
+    private int total_ ;
+    /**
+     * <code>uint32 total = 3;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public int getTotal() {
+      return total_;
+    }
+    /**
+     * <code>uint32 total = 3;</code>
+     * @param value The total to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotal(int value) {
+      
+      total_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 total = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotal() {
+      
+      total_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -916,41 +980,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:sku.SkuInventoryResp)
+    // @@protoc_insertion_point(builder_scope:sku.GetItemInfoResp)
   }
 
-  // @@protoc_insertion_point(class_scope:sku.SkuInventoryResp)
-  private static final com.example.wechatmerchant.skurpc.SkuInventoryResp DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:sku.GetItemInfoResp)
+  private static final com.example.wechatmerchant.skurpc.GetItemInfoResp DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.wechatmerchant.skurpc.SkuInventoryResp();
+    DEFAULT_INSTANCE = new com.example.wechatmerchant.skurpc.GetItemInfoResp();
   }
 
-  public static com.example.wechatmerchant.skurpc.SkuInventoryResp getDefaultInstance() {
+  public static com.example.wechatmerchant.skurpc.GetItemInfoResp getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SkuInventoryResp>
-      PARSER = new com.google.protobuf.AbstractParser<SkuInventoryResp>() {
+  private static final com.google.protobuf.Parser<GetItemInfoResp>
+      PARSER = new com.google.protobuf.AbstractParser<GetItemInfoResp>() {
     @java.lang.Override
-    public SkuInventoryResp parsePartialFrom(
+    public GetItemInfoResp parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SkuInventoryResp(input, extensionRegistry);
+      return new GetItemInfoResp(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SkuInventoryResp> parser() {
+  public static com.google.protobuf.Parser<GetItemInfoResp> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SkuInventoryResp> getParserForType() {
+  public com.google.protobuf.Parser<GetItemInfoResp> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.example.wechatmerchant.skurpc.SkuInventoryResp getDefaultInstanceForType() {
+  public com.example.wechatmerchant.skurpc.GetItemInfoResp getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

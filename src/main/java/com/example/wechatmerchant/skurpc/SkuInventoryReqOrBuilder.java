@@ -8,14 +8,27 @@ public interface SkuInventoryReqOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string sku_id = 1;</code>
-   * @return The skuId.
+   * <code>repeated string sku_id = 1;</code>
+   * @return A list containing the skuId.
    */
-  String getSkuId();
+  java.util.List<java.lang.String>
+      getSkuIdList();
   /**
-   * <code>string sku_id = 1;</code>
-   * @return The bytes for skuId.
+   * <code>repeated string sku_id = 1;</code>
+   * @return The count of skuId.
+   */
+  int getSkuIdCount();
+  /**
+   * <code>repeated string sku_id = 1;</code>
+   * @param index The index of the element to return.
+   * @return The skuId at the given index.
+   */
+  java.lang.String getSkuId(int index);
+  /**
+   * <code>repeated string sku_id = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the skuId at the given index.
    */
   com.google.protobuf.ByteString
-      getSkuIdBytes();
+      getSkuIdBytes(int index);
 }

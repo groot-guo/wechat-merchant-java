@@ -16,21 +16,21 @@ public interface SkuInventoryRespOrBuilder extends
    * <code>.sku.CommonRsp common = 1;</code>
    * @return The common.
    */
-  CommonRsp getCommon();
+  com.example.wechatmerchant.skurpc.CommonRsp getCommon();
   /**
    * <code>.sku.CommonRsp common = 1;</code>
    */
-  CommonRspOrBuilder getCommonOrBuilder();
+  com.example.wechatmerchant.skurpc.CommonRspOrBuilder getCommonOrBuilder();
 
   /**
    * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  java.util.List<SkuInventoryInfo>
+  java.util.List<com.example.wechatmerchant.skurpc.SkuInventoryInfo> 
       getDataList();
   /**
    * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  SkuInventoryInfo getData(int index);
+  com.example.wechatmerchant.skurpc.SkuInventoryInfo getData(int index);
   /**
    * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
@@ -38,11 +38,11 @@ public interface SkuInventoryRespOrBuilder extends
   /**
    * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  java.util.List<? extends SkuInventoryInfoOrBuilder>
+  java.util.List<? extends com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder> 
       getDataOrBuilderList();
   /**
    * <code>repeated .sku.SkuInventoryInfo data = 2;</code>
    */
-  SkuInventoryInfoOrBuilder getDataOrBuilder(
+  com.example.wechatmerchant.skurpc.SkuInventoryInfoOrBuilder getDataOrBuilder(
       int index);
 }

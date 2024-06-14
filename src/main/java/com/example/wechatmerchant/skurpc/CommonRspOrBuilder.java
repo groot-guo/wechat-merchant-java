@@ -8,7 +8,7 @@ public interface CommonRspOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint64 code = 1;</code>
+   * <code>int64 code = 1;</code>
    * @return The code.
    */
   long getCode();
@@ -17,7 +17,7 @@ public interface CommonRspOrBuilder extends
    * <code>string msg = 2;</code>
    * @return The msg.
    */
-  String getMsg();
+  java.lang.String getMsg();
   /**
    * <code>string msg = 2;</code>
    * @return The bytes for msg.
