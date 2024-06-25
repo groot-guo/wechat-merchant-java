@@ -8,6 +8,9 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
+import pub.dtm.client.DtmGrpcClient;
+import pub.dtm.client.grpc.saga.SagaGrpc;
+
 
 import java.util.List;
 
@@ -78,5 +81,35 @@ public class SkuRpcClient {
         } catch (Exception e) {
             throw new Exception("sss");
         }
+    }
+
+    public void reduceSkuInventory(List<String> SkuIdList) throws Exception {
+        List<ServiceInstance> instances = discoveryClient.getInstances(this.skuRpcServiceName);
+        String srvAddr  ;
+        srvAddr = "127.0.0.1:8090";
+        //创建dtm clinet
+//        DtmClient dtmClient = new DtmClient("127.0.0.1:36789");
+//        Saga saga = dtmClient.newSaga();
+//
+//        saga.add(srvAddr+"/sku.SkuInventoryService/UpdateSkuInventoryInfo", srvAddr+"/sku.SkuInventoryService/UpdateSkuInventoryInfo", "");
+//        saga.submit();
+
+        DtmGrpcClient dtmGrpcClient = new DtmGrpcClient("127.0.0.1:36790");
+//        SagaGrpc sagaGrpc = dtmGrpcClient.newSagaGrpc();
+//        UpdateSkuInventoryInfoReq.Builder builder = UpdateSkuInventoryInfoReq.newBuilder();
+//        builder.setSkuId("12312321");
+//        builder.setInventoryQty(111);
+//        sagaGrpc.setRetryInterval(5);
+//        sagaGrpc.add(srvAddr+"/sku.SkuInventoryService/UpdateSkuInventorySagaWithXa", srvAddr+"/sku.SkuInventoryService/UpdateSkuInventorySagaWithXa", builder.build());
+//        sagaGrpc.submit();
+
+        SagaGrpc sagaGrpc2 = dtmGrpcClient.newSagaGrpc();
+        UpdateSkuInventoryInfoReq.Builder builder2 = UpdateSkuInventoryInfoReq.newBuilder();
+        builder2.setSkuId("12312321");
+        builder2.setInventoryQty(1);
+        sagaGrpc2.setRetryInterval(5);
+        sagaGrpc2.add(srvAddr+"/sku.SkuInventoryService/UpdateSkuInventorySaga", srvAddr+"/sku.SkuInventoryService/UpdateSkuInventorySaga", builder2.build());
+        sagaGrpc2.submit();
+
     }
 }
